@@ -435,7 +435,7 @@ internal sealed class ModelRosterSyncService : BackgroundService, IModelRosterOb
         JsonArray models;
         if (File.Exists(path))
         {
-            root = JsonNode.Parse(File.ReadAllText(path))?.AsObject() ?? new JsonObject();
+            root = ParseTolerant(File.ReadAllText(path));
             models = root["models"]?.AsArray() ?? [];
             root["models"] = models;
         }
@@ -495,8 +495,48 @@ internal sealed class ModelRosterSyncService : BackgroundService, IModelRosterOb
             return null;
         }
 
-        File.WriteAllText(path, root.ToJsonString(new JsonSerializerOptions { WriteIndented = true }) + Environment.NewLine);
+        File.WriteAllText(path, root.ToJsonString(WriteOptions) + Environment.NewLine);
         return path;
+    }
+
+    /// <summary>
+    /// Round-tripping must never lose a curator's prose: STJ's default encoder would write
+    /// every em-dash in a _comment as <c>\u2014</c>, and relaxed escaping is safe here because
+    /// the file is only ever read back by a JSON parser, never embedded in HTML or JS.
+    /// </summary>
+    private static readonly JsonSerializerOptions WriteOptions = new()
+    {
+        WriteIndented = true,
+        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
+    /// <summary>
+    /// Parses a config file, tolerating the one malformed shape that actually occurs in hand-edited
+    /// rosters: the same key written twice inside one object (two adjacent <c>_comment</c> lines —
+    /// groq.json carried that for a month). JsonNode throws on duplicate keys, so adjacent
+    /// duplicate comments are merged textually before parsing. The merge is a no-op when there is
+    /// no duplicate, and a duplicate *structural* key (two "match" lines) is left for the parser
+    /// to reject loudly — only the comment prose is auto-joined.
+    /// </summary>
+    private static JsonObject ParseTolerant(string raw)
+        => JsonNode.Parse(MergeAdjacentComments(raw))?.AsObject() ?? new JsonObject();
+
+    // A JSON string token: "..." with escaped quotes folded in. Two of these keys side by side
+    // (with any whitespace between them) are joined with a single space. Only _comment is merged —
+    // a duplicate structural key (two "match" lines) is a real conflict and must keep failing loud.
+    private static string MergeAdjacentComments(string raw)
+    {
+        return System.Text.RegularExpressions.Regex.Replace(
+            raw,
+            "\"_comment\"\\s*:\\s*(\"(?:[^\"\\\\]|\\\\.)*\")\\s*,\\s*\"_comment\"\\s*:\\s*(\"(?:[^\"\\\\]|\\\\.)*\")",
+            m =>
+            {
+                string a = JsonNode.Parse(m.Groups[1].Value)!.GetValue<string>();
+                string b = JsonNode.Parse(m.Groups[2].Value)!.GetValue<string>();
+                return "\"_comment\": " + JsonSerializer.Serialize(a.TrimEnd() + " " + b.TrimStart());
+            },
+            System.Text.RegularExpressions.RegexOptions.None,
+            TimeSpan.FromSeconds(2));
     }
 
     private JsonObject BuildAddition(RosterChange change, int priority, ModelCatalogService catalog)

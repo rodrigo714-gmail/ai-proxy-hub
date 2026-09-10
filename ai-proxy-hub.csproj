@@ -6,6 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- The Web SDK's default globs otherwise sweep tests/** (and a local .snapshot-viejo/**)
+         into Content/None items: the test project's generated files (MvcTestingAppManifest.json,
+         data/usage-rollup.json) get copied into this project's output, the test project copies
+         them back via the ProjectReference, and every build nests another copy of tests/bin
+         inside tests/bin - it grew to 4 GB and broke the build with MSB3030. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);tests\**;images\**;.snapshot-viejo\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>

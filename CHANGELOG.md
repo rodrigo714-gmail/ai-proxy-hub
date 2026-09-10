@@ -3,7 +3,7 @@
 All notable changes to AI Proxy Hub (formerly "Multi-Provider AI Proxy") will be documented in
 this file.
 
-## 2026-09-10 — The model offer renews itself: `ModelRosterSyncService`, and a loader that no longer depends on the filesystem
+## 2026-09-10 — The model offer renews itself: `ModelRosterSyncService`, a loader that no longer depends on the filesystem, and a build that stops nesting itself
 
 ### Added
 - **`ModelRosterSyncService` — automated renewal of each provider's model offer.** Discovery already
@@ -55,12 +55,34 @@ this file.
   Retirements now write `_retired: true`, and only that flag makes a disable reversible; re-enabling
   consumes the marker. Two new tests pin each half of the bug, and a third asserts a fresh
   addition produces *no change at all* on the next cycle.
+- **The writer escaped every em-dash in curators' `_comment` text to `\u2014`.** Found on the first
+  live apply (9 roster files rewritten): the default `JavaScriptEncoder` escapes all non-ASCII, so
+  hand-written prose — the file's whole purpose — came back unreadable. The writer now uses
+  `UnsafeRelaxedJsonEscaping`; the file is only ever read back by a JSON parser, never embedded in
+  HTML.
+- **A duplicated `_comment` key permanently blocked a provider's renewal.** `groq.json` had carried
+  two adjacent `_comment` lines in one entry for a month — valid enough for the lenient
+  `JsonDocument` loader, but `JsonNode.Parse` throws `ArgumentException` (from the `JsonObject`
+  dictionary, *not* `JsonException`) on a duplicate key, so every roster cycle failed to write Groq
+  and the failure was a single console line. The writer now merges adjacent duplicate `_comment`
+  lines textually before parsing — a no-op when there is no duplicate, while a duplicate
+  *structural* key (two `match` lines) still fails loud. `groq.json` itself is fixed to one merged
+  comment. The renewal degraded safely throughout: the other nine providers applied, Groq was
+  reported and skipped, nothing corrupted.
+- **`ai-proxy-hub.csproj` nested a copy of `tests/bin` inside `tests/bin` on every build.**
+  `Microsoft.NET.Sdk.Web` includes `Content`/`None` under `tests/**` by default, so the test
+  project's generated files (`MvcTestingAppManifest.json`, `data/usage-rollup.json`) were copied
+  into the proxy's output and back through the `ProjectReference` — each build added another level.
+  It reached ~4 GB in each of `bin` and `tests/bin`, local builds took 5–12 minutes, and the copy
+  eventually failed with `MSB3030`. `DefaultItemExcludes` now drops `tests/**`, `images/**` and
+  `.snapshot-viejo/**`; a clean build is ~4 s.
 
 ### Notes
-- 585 → 599 tests (14 new `ModelRosterSyncTests`: pure `ComputeDiff` decision tables, miss counting,
-  and two integration cycles against `FakeProviderHandler` + a throwaway config dir).
+- 585 → 601 tests (17 `ModelRosterSyncTests`: pure `ComputeDiff` decision tables, miss counting,
+  and integration cycles against `FakeProviderHandler` + a throwaway config dir, including one that
+  seeds a duplicate-comment file with em-dashes and asserts the renewal keeps literal prose).
 - Documentation refreshed: `CONFIGURATION.md` gains a *Model Roster Renewal* section and the new
-  `_auto`/`_added`/`_comment` fields; `.env.example` gains the `ROSTER_*` block.
+  `_auto`/`_added`/`_retired`/`_comment` fields; `.env.example` gains the `ROSTER_*` block.
 
 ## 2026-07-31 (4) — Failover reaches Visual Studio at last: `@auto` aliases, TPM misread as a daily quota, Cerebras context cap
 

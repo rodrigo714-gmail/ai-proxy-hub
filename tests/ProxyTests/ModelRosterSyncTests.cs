@@ -315,6 +315,42 @@ public class ModelRosterSyncTests : IDisposable
         Assert.Equal(original, File.ReadAllText(seeded)); // untouched
     }
 
+    [Fact]
+    public async Task RunCycle_SyncMode_PreservesUnicodePunctuationAndMergesDuplicateComments()
+    {
+        // Two writer bugs that would corrupt hand-curated files, both found on the first live apply:
+        // (1) the default STJ encoder escapes every em-dash in a curator's _comment to \u2014;
+        // (2) JsonNode throws on a duplicated _comment key - a real shape in groq.json - and the
+        // whole provider's renewal is lost. The writer must keep prose readable and tolerate the
+        // duplicate by merging the two comments into one.
+        string dir = MakeTempDir();
+        Environment.SetEnvironmentVariable("PROXY_DATA_DIR", dir);
+        Environment.SetEnvironmentVariable("ROSTER_MODE", "sync");
+
+        // The seeded file must declare the provider the cycle renews (deepseek, per the stub
+        // registry below), otherwise the writer creates a new file and never round-trips this one.
+        string seeded = Path.Combine(dir, "deepseek.json");
+        File.WriteAllText(seeded, """
+            { "provider": "deepseek", "models": [
+              { "_comment": "first — curated note.",
+                "_comment": "second — another note.",
+                "match": "deepseek-v4-pro", "priority": 1, "enabled": true } ] }
+            """);
+
+        (ModelRosterSyncService roster, ModelCatalogService catalog) =
+            BuildSyncServiceAndCatalog(["deepseek-v4-pro", "deepseek-flash"], configDir: dir);
+        roster.WriteDirOverrideForTest = dir;
+
+        RosterCycleResult result = await roster.RunCycleAsync(catalog, CancellationToken.None, force: true);
+
+        Assert.NotEmpty(result.FilesWritten);
+        string written = File.ReadAllText(seeded);
+        Assert.Contains("—", written);                       // em-dashes stay literal
+        Assert.DoesNotContain("\\u2014", written);           // never escaped
+        Assert.Contains("first — curated note. second — another note.", written); // merged
+        Assert.Contains("deepseek-flash", written);          // renewal still landed
+    }
+
     // ── Helpers ──────────────────────────────────────────────────────────────
 
     private string MakeTempDir()
