@@ -4,3 +4,5 @@ obj
 .env
 # Runtime usage rollup (PROXY_DATA_DIR). Local statistics, never committed.
 data/
+# Pre-rename workspace snapshot kept only for reference after the GitHub clone swap.
+.snapshot-viejo/
