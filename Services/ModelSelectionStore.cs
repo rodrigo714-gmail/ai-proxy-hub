@@ -185,7 +185,14 @@ internal sealed class ModelSelectionStore
                 continue;
             }
 
-            foreach (string file in Directory.EnumerateFiles(dir, "*.json"))
+            // Deterministic file order across platforms. Directory.EnumerateFiles returns
+            // alphabetically on NTFS (Windows) but in arbitrary inode order on ext4 (Linux CI),
+            // and two files may declare a provider whose model ids collide at equal match length
+            // (e.g. nvidia.json and openrouter.json both list "nvidia/nemotron-3-super-120b-a12b").
+            // The loader's longest-match tie-break keeps the first entry seen on equal length, so
+            // without an explicit sort the winning provider — and the config a test observes —
+            // depends on the filesystem. Ordinal sort makes Linux match Windows.
+            foreach (string file in Directory.EnumerateFiles(dir, "*.json").OrderBy(f => f, StringComparer.Ordinal))
             {
                 try
                 {

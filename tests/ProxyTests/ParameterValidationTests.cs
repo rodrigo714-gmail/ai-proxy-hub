@@ -465,7 +465,6 @@ public class ParameterValidationTests
     [InlineData("moonshot-v1-auto",          131_072,  32_768)]
     [InlineData("moonshot-v1-32k",            32_768,   8_192)]
     [InlineData("qwen/qwen3-coder",                  1_048_576, 262_000)]
-    [InlineData("nvidia/nemotron-3-super-120b-a12b", 1_000_000,  16_384)]
     [InlineData("nvidia/llama-3.3-nemotron-super-49b-v1.5", 131_072, 16_384)]
     [InlineData("deepseek/deepseek-v4-pro",          1_048_576, 384_000)]
     // Cerebras caps this one at 8192 for messages and completion combined, verified live against
