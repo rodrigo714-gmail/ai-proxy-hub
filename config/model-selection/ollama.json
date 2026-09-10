@@ -232,6 +232,102 @@
         "max_tokens": 8192,
         "timeout_seconds": 120
       }
+    },
+    {
+      "match": "deepseek-v4.1-flash",
+      "priority": 25,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "glm-5.3",
+      "priority": 26,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "Ollama Cloud: model requires subscription or usage credits (verified live 2026-09-10). Enable once the plan covers it.",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "glm-5.3-flash",
+      "priority": 27,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "Ollama Cloud: model requires subscription or usage credits (verified live 2026-09-10). Enable once the plan covers it.",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "gpt-oss:20b",
+      "priority": 28,
+      "enabled": true,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "verified live 2026-09-10: answers a real request, enabled",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "openai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "minimax-m2.7",
+      "priority": 29,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "Ollama Cloud: model requires subscription or usage credits (verified live 2026-09-10). Enable once the plan covers it.",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nemotron-3-nano:30b",
+      "priority": 30,
+      "enabled": true,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "verified live 2026-09-10: answers a real request, enabled",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
     }
   ]
 }

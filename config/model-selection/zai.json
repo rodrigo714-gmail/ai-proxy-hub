@@ -88,6 +88,118 @@
         "max_tokens": 8192,
         "timeout_seconds": 120
       }
+    },
+    {
+      "match": "glm-4.5",
+      "priority": 6,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "glm-4.5-air",
+      "priority": 7,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "glm-4.6",
+      "priority": 8,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "glm-5",
+      "priority": 9,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "Z.AI code 1113: insufficient balance / no resource package (verified live 2026-09-10). Re-enable after recharge.",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "glm-5-turbo",
+      "priority": 10,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "glm-5.3",
+      "priority": 11,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "Z.AI code 1113: insufficient balance / no resource package (verified live 2026-09-10). Re-enable after recharge.",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "glm-5.3-flash",
+      "priority": 12,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "Z.AI code 1113: insufficient balance / no resource package (verified live 2026-09-10). Re-enable after recharge.",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
     }
   ]
 }

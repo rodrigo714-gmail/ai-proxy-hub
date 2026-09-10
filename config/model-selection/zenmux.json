@@ -233,6 +233,166 @@
         "max_tokens": 16384,
         "timeout_seconds": 240
       }
+    },
+    {
+      "match": "alibaba/wan3.0-video",
+      "priority": 15,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "alibaba/wan3.0-video-prime",
+      "priority": 16,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-haiku-4.5",
+      "priority": 17,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-opus-4",
+      "priority": 18,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-opus-4.1",
+      "priority": 19,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-opus-4.5",
+      "priority": 20,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-opus-4.6",
+      "priority": 21,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-opus-4.7",
+      "priority": 22,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-opus-5",
+      "priority": 23,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-sonnet-4",
+      "priority": 24,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
     }
   ]
 }

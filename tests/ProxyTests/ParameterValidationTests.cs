@@ -579,14 +579,14 @@ public class ParameterValidationTests
     // ─── Enabled model count per provider ───────────────────────────────
 
     [Theory]
-    [InlineData("deepseek", 2)]      // v4-pro + v4-flash (coder-6.7b disabled)
+    [InlineData("deepseek", 3)]      // v4-pro + v4-flash + deepseek-flash (verified live 2026-09-10; coder-6.7b disabled)
     [InlineData("openai", 4)]        // gpt-5.5, gpt-5.4, gpt-5.4-mini, o4-mini (gpt-5.5-pro is Responses-API only)
     [InlineData("nvidia", 8)]
-    [InlineData("groq", 7)]
+    [InlineData("groq", 8)]          // + qwen/qwen3.8-27b (verified live 2026-09-10)
     [InlineData("openrouter", 10)]
     [InlineData("moonshot", 6)]      // 6 enabled (kimi-k2.5 disabled)
     [InlineData("cerebras", 2)]
-    [InlineData("ollama", 9)]        // curated Ollama Cloud roster, single ollama.json
+    [InlineData("ollama", 11)]       // curated roster + gpt-oss:20b + nemotron-3-nano:30b (verified live 2026-09-10); single ollama.json
     [InlineData("zenmux", 0)]        // whole roster disabled 2026-07-31: HTTP 402 reject_no_credit on every model
     public void EnabledModelCount_IsCorrect(string providerName, int expectedEnabled)
     {
