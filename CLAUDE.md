@@ -18,7 +18,7 @@ solution are all named `ai-proxy-hub`. Older names (`vs2026-copilot-deepseek-v4`
 # Build
 dotnet build
 
-# Run all tests (585 tests, xUnit + WebApplicationFactory, fully offline)
+# Run all tests (599 tests, xUnit + WebApplicationFactory, fully offline)
 dotnet test
 
 # Run specific test suite
@@ -91,6 +91,10 @@ ProviderBillingService     →  Live balance probes (DeepSeek, OpenAI, OpenRoute
 ProxyLogger                →  Structured console/file logging incl. [FAILOVER] markers
 ProviderBenchmarkService   →  Background HostedService monitoring provider health
 UsageSnapshotService       →  Background HostedService: 60s snapshots + rollup flush
+ModelRosterSyncService     →  Background HostedService: watches discovery lists and renews
+                              config/model-selection/*.json (add new upstream ids, retire
+                              vanished ones). ROSTER_MODE=off|observe|sync. Also the sink
+                              behind IModelRosterObserver, wired onto ModelCatalogService.
 ```
 
 ### Endpoint Structure
@@ -101,6 +105,7 @@ UsageSnapshotService       →  Background HostedService: 60s snapshots + rollup
 - `Endpoints/DashboardEndpoints.cs` — Maps `/api/usage`, `/api/billing`, `/dashboard`
 - `Endpoints/FreeTierEndpoints.cs` — Maps `/api/free-tier/summary`
 - `Endpoints/UsageEndpoints.cs` — Maps `/usage`, `/usage/summary`, `/usage/pricing`, `/usage/reset`
+- `Endpoints/RosterEndpoints.cs` — Maps `/api/roster/diff` (GET, proposes) and `/api/roster/sync` (POST, applies; `?apply=true` forces a write in observe mode)
 - `Endpoints/ResponsesEndpoints.cs` — **dead code**: `MapResponsesEndpoints` is never called from `Program.cs`
 - `Middleware/` — Empty (auth middleware lives in `Infrastructure/ProxyAuthenticationMiddleware.cs`)
 
@@ -414,7 +419,7 @@ Tests use `WebApplicationFactory<Program>` with an **in-process stub provider** 
 - `ProxyFixture` provides `HttpClient` wired to the in-process proxy
 - Tests that construct a `ProviderRegistry` or otherwise touch process env vars MUST be in `[Collection("Proxy")]` — `ProxyFixture` boots `Program.cs`, which loads the developer's real `.env` into the process, so anything running in parallel with it races
 - Those tests must also use `ProviderEnvScope`, which clears every `PROVIDER_*` variable derived from `ProviderCapabilitiesRegistry` and restores them on dispose. Never hand-write the list: a forgotten provider picks up a real API key from `.env` and quietly changes collision resolution
-- **585 tests** across 24 test files covering endpoints, parameter validation, model selection, transformers, auth, reasoning cache, Ollama response building, JSON defaults, HTTP client factory, provider registry, `override_client_params` semantics, `provider/model` hint resolution, `@auto` fan-out (`AutoAliasTests.cs`), and Ollama NDJSON streaming
+- **599 tests** across 25 test files covering endpoints, parameter validation, model selection, transformers, auth, reasoning cache, Ollama response building, JSON defaults, HTTP client factory, provider registry, `override_client_params` semantics, `provider/model` hint resolution, `@auto` fan-out (`AutoAliasTests.cs`), roster renewal (`ModelRosterSyncTests.cs`), and Ollama NDJSON streaming
 
 ## Credential Separation
 
@@ -441,6 +446,7 @@ Per `.github/copilot-instructions.md`: **Never confuse Ollama Cloud API keys wit
 | `Infrastructure/UpstreamFailureClassifier.cs` | Classifies upstream failures; splits rate-limit from exhausted quota |
 | `Services/ProviderHealthService.cs` | Cooldowns, success-decay recovery, candidate reordering |
 | `Services/UsageRollupStore.cs` | Durable per-day usage rollup (survives restarts) |
+| `Services/ModelRosterSyncService.cs` | Roster renewal: diff + apply of config/model-selection against live discovery |
 | `Services/FreeTierCatalogStore.cs` | Free-tier allowances, pool dedup, ToS verdicts |
 | `config/model-selection/` | Per-provider model JSON configs (14 files) |
 | `config/free-tier/catalog.json` | Free-tier allowances and ToS verdicts per provider |

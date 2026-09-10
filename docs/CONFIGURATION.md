@@ -195,6 +195,9 @@ config/model-selection/
 | `models[].execution.supports_temperature` | bool | No | When `false`, strip `temperature` and `top_p` entirely |
 | `models[].execution.supports_reasoning` | bool | No | Advertise reasoning capability in `/api/tags` |
 | `models[].upstream` | string | No | Upstream id when it differs from `match` |
+| `models[]._auto` | bool | No | Set by the roster sync on entries it generated. Auto entries retire on the first observed absence; curated entries need `ROSTER_RETIRE_AFTER` consecutive misses. |
+| `models[]._added` | string | No | Date the roster sync added the entry (`YYYY-MM-DD`). |
+| `models[]._comment` | string | No | Why an entry is disabled — a retirement reason written by the sync, or a curator's note (EOL, not entitled, ToS). The sync never re-adds a model whose curated entry it finds disabled. |
 
 ### Override Client Params
 
@@ -203,6 +206,56 @@ When `override_client_params: true`, the proxy overwrites client-supplied values
 Currently enabled for:
 - Moonshot `kimi-k2.7-code`, `kimi-k2.7-code-highspeed`, `kimi-k2.6` (Kimi K2.x mandates `temperature=1.0`)
 - Ollama Cloud `kimi-k2.7-code` (same rule)
+
+---
+
+## Model Roster Renewal (`ModelRosterSyncService`)
+
+Discovery already filters: a model that vanished upstream is never served. But the roster files
+themselves are hand-curated, so two drifts accumulate silently — a provider publishes a new model
+and no client ever sees it, and a retired model keeps sitting in the config (and in `/api/tags`,
+which merges every enabled entry regardless of discovery) as if it were still on offer.
+
+The roster sync observes the same discovery lists the catalog fetches and turns them into a
+proposed diff: ids that match no enabled entry are **additions**; enabled entries that no
+observation matches are **retirements**.
+
+### Modes (`ROSTER_MODE`)
+
+| Value | Behaviour |
+|-------|-----------|
+| `off` | Inert. |
+| `observe` (default) | Records observations and answers `GET /api/roster/diff`, but **never writes**. Nothing changes about what is served. |
+| `sync` | On a timer, additionally applies the diff to `config/model-selection/*.json` and reloads the catalog — the offer renews itself without a restart. |
+
+### Endpoints
+
+| Endpoint | Method | Purpose |
+|----------|--------|---------|
+| `/api/roster/diff` | GET | What would the sync change? Computed from a fresh discovery pass per provider. |
+| `/api/roster/sync` | POST | Runs a cycle now. `?apply=true` writes the config even while in `observe` mode — the human-in-the-loop path: inspect the diff, apply it, restart nothing. |
+
+### Other settings
+
+| Variable | Default | Meaning |
+|----------|---------|---------|
+| `ROSTER_SYNC_INTERVAL_MINUTES` | `60` | How often the timer runs a cycle in `sync` mode. |
+| `ROSTER_RETIRE_AFTER` | `3` | Consecutive checks an enabled **curated** entry must be absent before it is retired. A provider's catalog endpoint can fail or truncate; standing a good model down on one bad observation is worse than carrying a stale entry. |
+| `ROSTER_AUTO_ENABLE` | `false` | When `false`, additions land **disabled** with a `_comment` so the next curation pass starts from "enable these" rather than a blank page. An unreviewed id from an aggregator's catalog is not something to hand to VS 2026 by default. |
+| `ROSTER_MAX_ADDITIONS` | `10` | Cap on auto-additions per provider per cycle. |
+| `ROSTER_PROVIDERS` | *(all)* | Comma-separated allowlist; only these providers are considered. |
+| `ROSTER_WRITE_DIR` | *(config dir)* | Where to write. Point it at a throwaway directory to dry-run writes. |
+
+### What it deliberately does NOT do
+
+- **Never retires on an empty observation.** A failed or rate-limited `/v1/models` fetch is "no
+  signal", not "everything is gone".
+- **Never resurrects a deliberately disabled curated entry.** A disabled entry with a `_comment`
+  (end-of-life, not entitled, ToS) records a decision the curator made with more information than
+  the catalog has.
+- **Never proposes non-chat ids** (embeddings, guardrails, moderation, rerankers, ASR/TTS, world
+  models).
+- Auto entries (`_auto: true`) retire on the **first** miss — nobody chose them by hand.
 
 ---
 

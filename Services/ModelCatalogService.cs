@@ -21,6 +21,13 @@ internal sealed class ModelCatalogService
 
     internal DateTime ModelsLastRefreshUtc { get; private set; }
 
+    /// <summary>
+    /// Optional sink that receives every raw discovery list so the roster sync can propose
+    /// additions and retirements. Wired in <c>Program.cs</c> after the container is built —
+    /// the catalog itself never depends on the sync service.
+    /// </summary>
+    internal IModelRosterObserver? RosterObserver { get; set; }
+
     internal async Task RefreshAvailableModelsIfNeeded(CancellationToken ct)
     {
         if (DateTime.UtcNow - ModelsLastRefreshUtc < _modelsRefreshInterval)
@@ -37,6 +44,7 @@ internal sealed class ModelCatalogService
             foreach (ProviderInfo prov in _providerRegistry.Providers)
             {
                 string[] discovered = await TryGetModelsFromProvider(prov, ct);
+                RosterObserver?.Observe(prov.Name, discovered);
                 foreach (string m in discovered)
                 {
                     if (string.IsNullOrWhiteSpace(m)) continue;
@@ -321,6 +329,21 @@ internal sealed class ModelCatalogService
             obj.Name is null ? 0 : StringComparer.OrdinalIgnoreCase.GetHashCode(obj.Name);
     }
 
+    /// <summary>
+    /// Non-chat models (embeddings, guardrails, rerankers, ASR/TTS, world models). The same
+    /// keyword list the profile heuristic uses, exposed so the roster sync can refuse to
+    /// auto-propose ids that could never answer a chat request.
+    /// </summary>
+    internal static bool IsNonChatModel(string model)
+    {
+        string m = model.ToLowerInvariant();
+        return m.Contains("guard") || m.Contains("safety") || m.Contains("moderation") || m.Contains("embed") || m.Contains("retriever")
+            || m.Contains("reranker") || m.Contains("reward") || m.Contains("parse") || m.Contains("detector")
+            || m.Contains("clip") || m.Contains("nv-embed") || m.Contains("embedqa") || m.Contains("cached-model")
+            || m.Contains("rerank") || m.Contains("classification") || m.Contains("riva-translate")
+            || m.Contains("synthetic-video") || m.Contains("whisper") || m.Contains("tts") || m.Contains("cosmos");
+    }
+
     internal (int ContextLength, int MaxOutputTokens, bool SupportsTools, bool SupportsVision, string[] Capabilities, string Family) GetModelProfile(string model)
     {
         ModelExecutionConfig configured = _modelSelectionStore.GetExecutionConfigForModel(model, _providerRegistry.ModelToProvider);
@@ -329,7 +352,7 @@ internal sealed class ModelCatalogService
         bool vision = configured.SupportsVision ?? (m.Contains("vision") || m.Contains("-vl") || m.Contains("neva") || m.Contains("vila") || m.Contains("fuyu") || m.Contains("kosmos"));
         int ctx, maxOut;
 
-        if (m.Contains("guard") || m.Contains("safety") || m.Contains("embed") || m.Contains("retriever") || m.Contains("reranker") || m.Contains("reward") || m.Contains("parse") || m.Contains("detector") || m.Contains("clip") || m.Contains("nv-embed") || m.Contains("embedqa") || m.Contains("cached-model") || m.Contains("rerank") || m.Contains("classification") || m.Contains("riva-translate") || m.Contains("synthetic-video"))
+        if (IsNonChatModel(m))
         { ctx = 0; maxOut = 0; tools = false; }
         else if (m.Contains("deepseek")) { ctx = 1_000_000; maxOut = 384_000; }
         else if (m.Contains("nemotron-3-super")) { ctx = 1_000_000; maxOut = 16384; }
@@ -438,7 +461,7 @@ internal sealed class ModelCatalogService
         }
     }
 
-    private static async Task<string[]> TryGetModelsFromProvider(ProviderInfo provider, CancellationToken ct)
+    internal static async Task<string[]> TryGetModelsFromProvider(ProviderInfo provider, CancellationToken ct)
     {
         try
         {
