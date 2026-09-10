@@ -182,6 +182,166 @@
         "max_tokens": 8192,
         "timeout_seconds": 120
       }
+    },
+    {
+      "match": "01-ai/yi-large",
+      "priority": 23,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "adept/fuyu-8b",
+      "priority": 24,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "ai21labs/jamba-1.5-large-instruct",
+      "priority": 25,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "aisingapore/sea-lion-7b-instruct",
+      "priority": 26,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "bigcode/starcoder2-15b",
+      "priority": 27,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 16384,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "databricks/dbrx-instruct",
+      "priority": 28,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek-ai/deepseek-coder-6.7b-instruct",
+      "priority": 29,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek-ai/deepseek-v4-flash-0731",
+      "priority": 30,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/codegemma-1.1-7b",
+      "priority": 31,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 8192,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/codegemma-7b",
+      "priority": 32,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 8192,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
     }
   ]
 }

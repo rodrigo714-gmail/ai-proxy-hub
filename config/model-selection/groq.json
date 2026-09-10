@@ -117,6 +117,70 @@
         "max_tokens": 4096,
         "timeout_seconds": 60
       }
+    },
+    {
+      "match": "allam-2-7b",
+      "priority": 8,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "canopylabs/orpheus-arabic-saudi",
+      "priority": 9,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "canopylabs/orpheus-v1-english",
+      "priority": 10,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.8-27b",
+      "priority": 11,
+      "enabled": true,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "verified live 2026-09-10: answers a real request, enabled",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
     }
   ]
 }

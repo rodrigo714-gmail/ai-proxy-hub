@@ -33,6 +33,38 @@
         "max_tokens": 8192,
         "timeout_seconds": 120
       }
+    },
+    {
+      "match": "gemma-4-31b",
+      "priority": 3,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "roster sync 2026-09-10: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen-3.8-27b",
+      "priority": 4,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "Cerebras payment_required_error: billing tab needs credit (verified live 2026-09-10).",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
     }
   ]
 }

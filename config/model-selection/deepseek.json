@@ -49,6 +49,22 @@
         "reasoning_effort": "medium",
         "timeout_seconds": 90
       }
+    },
+    {
+      "match": "deepseek-flash",
+      "priority": 4,
+      "enabled": true,
+      "_auto": true,
+      "_added": "2026-09-10",
+      "_comment": "verified live 2026-09-10: answers a real request, enabled",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
     }
   ]
 }
