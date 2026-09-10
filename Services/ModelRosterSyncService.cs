@@ -217,27 +217,30 @@ internal sealed class ModelRosterSyncService : BackgroundService, IModelRosterOb
                 continue;
             }
 
-            // A deliberately disabled curated entry is not an oversight — the curator left a
-            // _comment explaining why (end-of-life, not entitled, ToS). Re-adding it as an auto
-            // entry would undo that decision with less information than they had.
-            ModelSelectionEntry? disabledCurated = entries
-                .Where(e => !e.Enabled && !e.AutoManaged && id.Contains(e.Match, StringComparison.OrdinalIgnoreCase))
+            // A disabled entry is only reversible if the sync itself retired it. Two other states
+            // are disabled without being retired, and both must survive untouched:
+            //  - a curator's deliberate enabled:false (EOL, not entitled, ToS) with its _comment;
+            //  - a fresh auto-addition awaiting review, which is exactly why it landed disabled —
+            //    re-enabling it on the next cycle would undo ROSTER_AUTO_ENABLE=false by itself.
+            // _retired is written only by the retirement path below, so it is the single marker
+            // that distinguishes "the sync stood this down and may stand it back up" from both.
+            ModelSelectionEntry? retiredEntry = entries
+                .Where(e => !e.Enabled && e.Retired && id.Contains(e.Match, StringComparison.OrdinalIgnoreCase))
                 .Select(e => (ModelSelectionEntry?)e)
                 .FirstOrDefault();
-            if (disabledCurated is not null)
+            if (retiredEntry is not null)
             {
+                changes.Add(new RosterChange(providerName, retiredEntry.Value.Match, RosterChangeKind.ReEnable,
+                    "back on the provider's catalog"));
                 continue;
             }
 
-            // A previously auto-retired entry that came back is a reappearance, not a new model.
-            ModelSelectionEntry? retiredAuto = entries
-                .Where(e => !e.Enabled && e.AutoManaged && id.Contains(e.Match, StringComparison.OrdinalIgnoreCase))
+            ModelSelectionEntry? leftDisabled = entries
+                .Where(e => !e.Enabled && !e.Retired && id.Contains(e.Match, StringComparison.OrdinalIgnoreCase))
                 .Select(e => (ModelSelectionEntry?)e)
                 .FirstOrDefault();
-            if (retiredAuto is not null)
+            if (leftDisabled is not null)
             {
-                changes.Add(new RosterChange(providerName, retiredAuto.Value.Match, RosterChangeKind.ReEnable,
-                    "back on the provider's catalog"));
                 continue;
             }
 
@@ -470,9 +473,18 @@ internal sealed class ModelRosterSyncService : BackgroundService, IModelRosterOb
                     }
 
                     target["enabled"] = change.Kind == RosterChangeKind.ReEnable;
-                    target["_comment"] = change.Kind == RosterChangeKind.ReEnable
-                        ? $"roster sync {DateTime.UtcNow:yyyy-MM-dd}: re-enabled — {change.Reason}"
-                        : $"roster sync {DateTime.UtcNow:yyyy-MM-dd}: retired — {change.Reason}";
+                    if (change.Kind == RosterChangeKind.Retire)
+                    {
+                        target["_retired"] = true;
+                        target["_comment"] = $"roster sync {DateTime.UtcNow:yyyy-MM-dd}: retired — {change.Reason}";
+                    }
+                    else
+                    {
+                        // Re-enabling consumes the retirement: drop the marker so a later
+                        // deliberate disable (or a fresh retirement) starts from a clean state.
+                        target.Remove("_retired");
+                        target["_comment"] = $"roster sync {DateTime.UtcNow:yyyy-MM-dd}: re-enabled — {change.Reason}";
+                    }
                     modified = true;
                     break;
             }

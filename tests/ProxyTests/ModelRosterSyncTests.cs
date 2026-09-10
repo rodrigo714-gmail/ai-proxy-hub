@@ -37,8 +37,8 @@ public class ModelRosterSyncTests : IDisposable
     private static ModelSelectionEntry Enabled(string match, int priority = 1) =>
         new(match, priority, true, new ModelExecutionConfig());
 
-    private static ModelSelectionEntry Disabled(string match, int priority = 1, bool auto = false) =>
-        new(match, priority, false, new ModelExecutionConfig(), AutoManaged: auto);
+    private static ModelSelectionEntry Disabled(string match, int priority = 1, bool auto = false, bool retired = false) =>
+        new(match, priority, false, new ModelExecutionConfig(), AutoManaged: auto, Retired: retired);
 
     private static ModelSelectionEntry AutoEnabled(string match, int priority = 1) =>
         new(match, priority, true, new ModelExecutionConfig(), AutoManaged: true);
@@ -93,16 +93,46 @@ public class ModelRosterSyncTests : IDisposable
     }
 
     [Fact]
-    public void ComputeDiff_AutoRetiredEntryReappears_ProposesReEnable()
+    public void ComputeDiff_SyncRetiredEntryReappears_ProposesReEnable()
     {
         RosterProviderDiff diff = ModelRosterSyncService.ComputeDiff(
             "deepseek",
             ["deepseek-v4-flash"],
-            [Disabled("deepseek-v4-flash", auto: true)],
+            [Disabled("deepseek-v4-flash", auto: true, retired: true)],
             Misses(), retireAfter: 3, maxAdditions: 10);
 
         RosterChange reenable = Assert.Single(diff.Changes, c => c.Kind == RosterChangeKind.ReEnable);
         Assert.Equal("deepseek-v4-flash", reenable.Model);
+    }
+
+    [Fact]
+    public void ComputeDiff_CuratedEntryRetiredBySyncReappears_ProposesReEnable()
+    {
+        // A curated entry the sync itself retired must be reversible: without the _retired
+        // marker it would look like the curator's own enabled:false and stay dead forever.
+        RosterProviderDiff diff = ModelRosterSyncService.ComputeDiff(
+            "nvidia",
+            ["z-ai/glm-5.2"],
+            [Disabled("z-ai/glm-5.2", retired: true)],
+            Misses(), retireAfter: 3, maxAdditions: 10);
+
+        Assert.Single(diff.Changes, c =>
+            c.Kind == RosterChangeKind.ReEnable && c.Model == "z-ai/glm-5.2");
+    }
+
+    [Fact]
+    public void ComputeDiff_FreshAutoAdditionStillObserved_ProducesNoChange()
+    {
+        // The addition landed disabled for review and the model is still on the catalog. The
+        // next cycle must neither re-add it nor re-enable it — otherwise ROSTER_AUTO_ENABLE=false
+        // would be undone by the sync itself one hour later.
+        RosterProviderDiff diff = ModelRosterSyncService.ComputeDiff(
+            "deepseek",
+            ["deepseek-flash"],
+            [Disabled("deepseek-flash", auto: true)],
+            Misses(), retireAfter: 3, maxAdditions: 10);
+
+        Assert.Empty(diff.Changes);
     }
 
     [Fact]

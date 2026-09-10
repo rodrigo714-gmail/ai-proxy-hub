@@ -41,6 +41,20 @@ this file.
 - **`IsNonChatModel` did not filter `moderation`**, so OpenAI's `omni-moderation-latest` was being
   proposed as a chat addition. It now also excludes such ids from the catalog (`ctx=0`), which is
   what the profile heuristic always intended.
+- **A retirement was indistinguishable from a deliberate disable, so the sync both self-enabled
+  additions and permanently killed curated models** (caught while reviewing the first live diff,
+  before applying anything). A disabled entry meant one of three different things and the code
+  could not tell them apart:
+  - an addition that landed disabled *awaiting review* (`ROSTER_AUTO_ENABLE=false`),
+  - a curator's deliberate `enabled:false` (EOL / not entitled / ToS),
+  - an entry the sync had just retired.
+  The re-appearance rule keyed off `_auto`, so the next cycle saw a still-listed `deepseek-flash`,
+  classified it as "a retired auto entry came back", and re-enabled it — the sync quietly undoing
+  its own review gate an hour later. Symmetrically, a *curated* entry the sync retired and the
+  provider later restored fell into the deliberate-disable branch and stayed dead forever.
+  Retirements now write `_retired: true`, and only that flag makes a disable reversible; re-enabling
+  consumes the marker. Two new tests pin each half of the bug, and a third asserts a fresh
+  addition produces *no change at all* on the next cycle.
 
 ### Notes
 - 585 → 599 tests (14 new `ModelRosterSyncTests`: pure `ComputeDiff` decision tables, miss counting,

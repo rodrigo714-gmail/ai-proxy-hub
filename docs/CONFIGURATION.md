@@ -197,7 +197,8 @@ config/model-selection/
 | `models[].upstream` | string | No | Upstream id when it differs from `match` |
 | `models[]._auto` | bool | No | Set by the roster sync on entries it generated. Auto entries retire on the first observed absence; curated entries need `ROSTER_RETIRE_AFTER` consecutive misses. |
 | `models[]._added` | string | No | Date the roster sync added the entry (`YYYY-MM-DD`). |
-| `models[]._comment` | string | No | Why an entry is disabled — a retirement reason written by the sync, or a curator's note (EOL, not entitled, ToS). The sync never re-adds a model whose curated entry it finds disabled. |
+| `models[]._retired` | bool | No | Written **only** by the sync when it retires an entry. It marks a disable as the sync's own and reversible: if the model reappears on the provider's catalog, the sync re-enables it. A disabled entry *without* this flag is either a curator's deliberate `enabled:false` or a fresh addition awaiting review — the sync leaves both alone. |
+| `models[]._comment` | string | No | Why an entry is disabled — a retirement reason written by the sync, or a curator's note (EOL, not entitled, ToS). |
 
 ### Override Client Params
 
@@ -250,9 +251,11 @@ observation matches are **retirements**.
 
 - **Never retires on an empty observation.** A failed or rate-limited `/v1/models` fetch is "no
   signal", not "everything is gone".
-- **Never resurrects a deliberately disabled curated entry.** A disabled entry with a `_comment`
-  (end-of-life, not entitled, ToS) records a decision the curator made with more information than
-  the catalog has.
+- **Never touches an entry it did not retire.** A disabled entry without `_retired` is either the
+  curator's deliberate `enabled:false` (end-of-life, not entitled, ToS — a decision made with more
+  information than the catalog has) or a fresh addition awaiting review. The next cycle leaves both
+  exactly as they are, which is what keeps `ROSTER_AUTO_ENABLE=false` from being undone by the sync
+  itself one hour later.
 - **Never proposes non-chat ids** (embeddings, guardrails, moderation, rerankers, ASR/TTS, world
   models).
 - Auto entries (`_auto: true`) retire on the **first** miss — nobody chose them by hand.
