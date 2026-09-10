@@ -3,6 +3,51 @@
 All notable changes to AI Proxy Hub (formerly "Multi-Provider AI Proxy") will be documented in
 this file.
 
+## 2026-09-10 — The model offer renews itself: `ModelRosterSyncService`, and a loader that no longer depends on the filesystem
+
+### Added
+- **`ModelRosterSyncService` — automated renewal of each provider's model offer.** Discovery already
+  *filtered* against live `/v1/models`, but `config/model-selection/*.json` is hand-curated, so two
+  drifts accumulated silently: a provider publishing a new model was never offered, and a retired
+  model kept sitting in the config — and in `/api/tags`, which merges every enabled entry regardless
+  of discovery — so VS 2026 kept offering a dead model. The service observes the same discovery lists
+  the catalog already fetches and turns them into a diff: additions for unmatched upstream ids,
+  retirements for enabled entries no observation matches.
+  - Three modes via `ROSTER_MODE`: `off`, `observe` (default — proposes via `GET /api/roster/diff`,
+    writes nothing), `sync` (applies the diff to the JSON on a timer and reloads the catalog, no
+    restart). `POST /api/roster/sync?apply=true` is the human-in-the-loop path.
+  - Safety rails, because a stale or failed catalog read must never silently shrink a working offer:
+    an empty observation is 'no signal', never a retirement trigger; curated entries retire only after
+    `ROSTER_RETIRE_AFTER` (default 3) consecutive misses while `_auto` entries retire on the first;
+    a deliberately disabled curated entry is never resurrected; non-chat ids are never proposed;
+    additions land disabled with a `_comment` unless `ROSTER_AUTO_ENABLE=true`.
+  - Observations persist to `data/model-roster.json` so the miss counter survives a restart. A corrupt
+    file costs history, never correctness.
+- **`ModelSelectionStore.Reload()`** — atomic reference swap so a renewed roster takes effect without a
+  restart. The loader also gained a test-only config-dir seam.
+- **`IModelRosterObserver`** — the catalog feeds every discovery list to the sync through this sink,
+  wired in `Program.cs`, so there is no catalog→sync dependency edge.
+- **`GET /api/roster/diff` and `POST /api/roster/sync`** (`Endpoints/RosterEndpoints.cs`).
+
+### Fixed
+- **The loader's provider-collision tie-break depended on the filesystem, so CI was flaky on Linux.**
+  `Directory.EnumerateFiles` returns names alphabetically on NTFS (Windows) but in arbitrary inode
+  order on ext4 (the ubuntu CI runner). `nvidia.json` and `openrouter.json` both list
+  `nvidia/nemotron-3-super-120b-a12b` at equal match length, and the longest-match rule keeps the
+  *first seen* on a tie — so which provider's `max_output_tokens` (262144 vs 16384) a test observed
+  came down to the filesystem. The `AllModels_HaveCorrectContextWindowConfig` theory passed on Windows
+  and failed on Linux. Files are now enumerated in `StringComparer.Ordinal` order, which makes Linux
+  match Windows. The contradictory duplicate `[InlineData]` for that model was removed.
+- **`IsNonChatModel` did not filter `moderation`**, so OpenAI's `omni-moderation-latest` was being
+  proposed as a chat addition. It now also excludes such ids from the catalog (`ctx=0`), which is
+  what the profile heuristic always intended.
+
+### Notes
+- 585 → 599 tests (14 new `ModelRosterSyncTests`: pure `ComputeDiff` decision tables, miss counting,
+  and two integration cycles against `FakeProviderHandler` + a throwaway config dir).
+- Documentation refreshed: `CONFIGURATION.md` gains a *Model Roster Renewal* section and the new
+  `_auto`/`_added`/`_comment` fields; `.env.example` gains the `ROSTER_*` block.
+
 ## 2026-07-31 (4) — Failover reaches Visual Studio at last: `@auto` aliases, TPM misread as a daily quota, Cerebras context cap
 
 Found by running "corre los tests" through VS 2026 agent mode against four providers in turn.

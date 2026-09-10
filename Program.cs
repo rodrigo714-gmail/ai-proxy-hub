@@ -36,6 +36,10 @@ builder.Services.AddSingleton<ProviderBillingService>();
 
 builder.Services.AddHostedService<ProviderBenchmarkService>();
 builder.Services.AddHostedService<UsageSnapshotService>();
+// The roster sync is both a hosted loop and a DI-visible service (the /api/roster endpoints
+// and the catalog observer need the same instance the loop runs on).
+builder.Services.AddSingleton<ModelRosterSyncService>();
+builder.Services.AddHostedService(sp => sp.GetRequiredService<ModelRosterSyncService>());
 
 WebApplication app = builder.Build();
 app.UseUpstreamErrorHandling();
@@ -46,12 +50,16 @@ app.UseStaticFiles();
 
 ModelCatalogService modelCatalog = app.Services.GetRequiredService<ModelCatalogService>();
 ProviderRegistry providerRegistry = app.Services.GetRequiredService<ProviderRegistry>();
+// The catalog feeds every discovery list to the roster sync; the sync proposes (and in
+// ROSTER_MODE=sync applies) the config changes that keep each provider's offer current.
+modelCatalog.RosterObserver = app.Services.GetRequiredService<ModelRosterSyncService>();
 await modelCatalog.RefreshAvailableModels(CancellationToken.None);
 
 app.MapOpenAiEndpoints();
 app.MapUsageEndpoints();
 app.MapDashboardEndpoints();
 app.MapFreeTierEndpoints();
+app.MapRosterEndpoints();
 app.MapOllamaEndpoints();
 app.MapHealthEndpoints();
 

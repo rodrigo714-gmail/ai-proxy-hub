@@ -27,8 +27,8 @@ The proxy includes a comprehensive test suite covering every component of the ro
 
 ### Test Statistics
 
-- **Total Tests:** 585
-- **Status:** ✅ All passing (585 passed, 1 skipped)
+- **Total Tests:** 599
+- **Status:** ✅ All passing (598 passed, 1 skipped)
 - **Framework:** xUnit 2.9.3 + `Microsoft.AspNetCore.Mvc.Testing`
 - **Coverage Areas:**
   - ✅ Endpoint routing (OpenAI `/v1/*` & Ollama `/api/*` formats)
@@ -229,7 +229,8 @@ The proxy ships with the following test files in `tests/ProxyTests/`:
 | **`DashboardEndpointTests.cs`** | **~6** | **Dashboard served from `wwwroot`, Chart.js local not CDN, quota panels present** |
 | **`DotEnvLoaderTests.cs`** | **12** | **Precedence: a real environment variable beats `.env`; an empty value never masks one** |
 | **`ReasoningFallbackTests.cs`** | **4** | **Reasoning-only answers reach the client as content whether the upstream names the field `reasoning_content` (DeepSeek-style) or `reasoning` (Cerebras/Groq/OpenRouter), on both `/api/chat` paths** |
-| **Total** | **585** | |
+| **`ModelRosterSyncTests.cs`** | **14** | **Roster renewal: pure `ComputeDiff` decision tables (add / re-enable / retire / pending / non-chat skip / empty-observation safety), miss counting via `Observe`, and two integration cycles against `FakeProviderHandler` + a throwaway config dir (sync writes the addition, observe proposes but leaves the file byte-identical)** |
+| **Total** | **599** | |
 
 ---
 
