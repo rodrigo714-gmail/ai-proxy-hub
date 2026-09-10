@@ -283,7 +283,12 @@ internal sealed class ModelSelectionStore
                         // the sync itself reads the JSON files directly for round-tripping.
                         bool autoManaged = item.TryGetProperty("_auto", out JsonElement autoE)
                             && autoE.ValueKind == JsonValueKind.True;
-                        entries.Add(new ModelSelectionEntry(matchValue!, priority, enabled, exec, upstream, autoManaged));
+                        // "_retired": true marks a disable that came from the sync rather than from
+                        // the curator's hand or from a fresh addition awaiting review. Only such
+                        // entries are re-enabled when the model reappears on the catalog.
+                        bool retired = item.TryGetProperty("_retired", out JsonElement retE)
+                            && retE.ValueKind == JsonValueKind.True;
+                        entries.Add(new ModelSelectionEntry(matchValue!, priority, enabled, exec, upstream, autoManaged, retired));
                     }
 
                     if (entries.Count > 0)
