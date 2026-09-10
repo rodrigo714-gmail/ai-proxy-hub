@@ -1,6 +1,6 @@
 # System Architecture
 
-Comprehensive architecture documentation describing the proxy design, components, and data flow for **9 AI providers**: DeepSeek, OpenAI, NVIDIA NIM, Groq, OpenRouter, Ollama Cloud, Moonshot/Kimi, Cerebras, and ZenMux.
+Comprehensive architecture documentation describing the proxy design, components, and data flow for **14 AI providers** (see [Overview](#overview) for the list).
 
 ## Table of Contents
 
@@ -17,6 +17,7 @@ Comprehensive architecture documentation describing the proxy design, components
 - [Image Passthrough Support](#image-passthrough-support)
 - [Force-Mode Parameter Override](#force-mode-parameter-override)
 - [Failing Over](#failing-over)
+- [Upstream Error Handling](#upstream-error-handling)
 - [Performance Optimizations](#performance-optimizations)
 
 ---
@@ -55,7 +56,7 @@ The proxy is a high-performance ASP.NET Core minimal API application that bridge
 - **Web Framework:** ASP.NET Core Minimal APIs (`WebApplication.CreateSlimBuilder`)
 - **Serialization:** System.Text.Json
 - **HTTP Client:** `SocketsHttpHandler` with 256 connections/server + HTTP/2 multiplexing
-- **Testing:** xUnit 2.9.3 + `Microsoft.AspNetCore.Mvc.Testing` — **585 tests** in 24 test files
+- **Testing:** xUnit 2.9.3 + `Microsoft.AspNetCore.Mvc.Testing` — **599 tests** in 25 test files
 - **Dependencies:** none. The `.csproj` has zero `PackageReference` entries; everything used ships in the shared framework.
 
 ---
@@ -115,25 +116,16 @@ Creates and caches HTTP clients for each provider with auth headers, base URL, a
 
 #### 2. `ProviderRegistry`
 
-**Discovery order:** `deepseek, openai, nvidia, openrouter, groq, ollama, moonshot, cerebras, zenmux`
-
-**Base URLs:**
-
-| Provider | Base URL |
-|----------|----------|
-| DeepSeek | `https://api.deepseek.com` |
-| OpenAI | `https://api.openai.com` |
-| NVIDIA NIM | `https://integrate.api.nvidia.com` |
-| OpenRouter | `https://openrouter.ai/api/` |
-| Groq | `https://api.groq.com/openai` |
-| Ollama Cloud | `https://ollama.com` |
-| Moonshot/Kimi | `https://api.moonshot.ai` |
-| Cerebras | `https://api.cerebras.ai` |
-| ZenMux | `https://zenmux.ai/api` |
+**Discovery order** follows the iteration of `ProviderCapabilitiesRegistry` — that registry is the
+single source of truth for every provider's base URL, env prefix, API paths and parameter support;
+consult it instead of mirroring it here.
 
 #### 3. `ModelSelectionStore`
 
-Loads and parses model metadata from `config/model-selection/*.json` (10 files: deepseek, openai, nvidia, groq, openrouter, moonshot, cerebras, ollamacloud, ollama, zenmux).
+Loads and parses model metadata from `config/model-selection/*.json` — one file per provider
+(14 today; `ollama.json` and `ollamacloud.json` both declare provider `ollama` and are merged).
+Files are enumerated in **ordinal** order so equal-length match collisions resolve identically on
+NTFS and ext4 — see `CLAUDE.md` §Testing gotchas before changing this.
 
 #### 4. `ModelCatalogService`
 
@@ -148,6 +140,10 @@ Caches DeepSeek `reasoning_content` for multi-turn conversations.
 Normalizes, filters, and injects request parameters per provider. Honours `override_client_params` force-mode.
 
 **Parameter filtering matrix:**
+
+> Representative subset only. The authoritative per-provider flags are
+> `SupportsReasoningEffort` / `SupportsTopK` in `ProviderCapabilitiesRegistry`, plus the
+> per-model `execution` block in `config/model-selection/*.json`. Update those, not this table.
 
 | Provider | temperature | top_p | top_k | reasoning_effort | tools |
 |----------|:-----------:|:-----:|:-----:|:-----------------:|:-----:|
@@ -387,6 +383,23 @@ An explicit `model@provider` pin resolves to a single candidate, so it is neithe
 failed over: answering an explicit choice from a different provider is worse than an honest error.
 Clients that want the opposite send `model@auto` instead, which is the only id in `/api/tags` that
 reaches this reordering at all — see [Unpinned Aliases](#unpinned-aliases-modelauto).
+
+## Upstream Error Handling
+
+`Infrastructure/UpstreamErrorMiddleware.cs` maps transport failures to responses a client can act
+on, so an unreachable host is never an empty HTTP 500 that Visual Studio reports only as "the
+model failed":
+
+| Failure | Response |
+|---|---|
+| `HttpRequestException` (connection refused, DNS/TLS) | **502 `UPSTREAM_UNREACHABLE`** |
+| Nothing back within `timeout_seconds` | **504 `UPSTREAM_TIMEOUT`** |
+
+Both carry a JSON body naming the provider and model. An upstream 200 whose body is not a
+parseable OpenAI completion also returns **502** with the upstream body attached, rather than
+throwing. Note the interaction with failover: a transport failure is the `Unreachable` kind in
+`UpstreamFailureClassifier`, so it fails over to the next candidate and cools the provider on the
+**first** occurrence — this middleware only runs when every candidate has already been spent.
 
 ---
 
