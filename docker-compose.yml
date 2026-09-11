@@ -12,6 +12,13 @@ services:
       # `docker compose up --force-recreate` resets the month-to-date token counters and the
       # free-tier budget page starts again from zero.
       - ai-proxy-hub-data:/app/data
+      # Bind-mount the model roster so ROSTER_MODE=sync writes land on the HOST, not in the
+      # image's ephemeral layer. Without this, a renewal (new ids added, dead ones retired)
+      # would vanish on the next recreate. With it, the container renews the very files that
+      # `git status` tracks: the bot stages its proposals in the working tree, and a human
+      # reviews `git diff config/model-selection/` and commits the ones to keep. The host
+      # config becomes the single source of truth the container reads AND writes.
+      - ./config/model-selection:/app/config/model-selection
     restart: unless-stopped
     healthcheck:
       # The .NET runtime image ships neither wget nor curl, so the old wget probe could never run and
