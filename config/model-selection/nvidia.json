@@ -367,6 +367,166 @@
         "family": "google",
         "timeout_seconds": 120
       }
+    },
+    {
+      "match": "google/deplot",
+      "priority": 33,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/diffusiongemma-26b-a4b-it",
+      "priority": 34,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 8192,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-2b",
+      "priority": 35,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 8192,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-3-12b-it",
+      "priority": 36,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-3-4b-it",
+      "priority": 37,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-4-31b-it",
+      "priority": 38,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/recurrentgemma-2b",
+      "priority": 39,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 8192,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "ibm/granite-3.0-3b-a800m-instruct",
+      "priority": 40,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "ibm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "ibm/granite-3.0-8b-instruct",
+      "priority": 41,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "ibm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "ibm/granite-34b-code-instruct",
+      "priority": 42,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "ibm",
+        "timeout_seconds": 120
+      }
     }
   ]
 }
