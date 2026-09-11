@@ -56,9 +56,8 @@
       "match": "deepseek-flash",
       "priority": 4,
       "enabled": true,
-      "_auto": true,
       "_added": "2026-09-10",
-      "_comment": "verified live 2026-09-10: answers a real request, enabled",
+      "_comment": "verified live 2026-09-10 (200 OK); promoted from _auto to curated 2026-09-11 so a catalog blip retires it only after ROSTER_RETIRE_AFTER misses, not on the first.",
       "execution": {
         "context_length": 1000000,
         "max_output_tokens": 384000,

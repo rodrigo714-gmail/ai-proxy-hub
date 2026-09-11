@@ -173,9 +173,8 @@
       "match": "qwen/qwen3.8-27b",
       "priority": 11,
       "enabled": true,
-      "_auto": true,
       "_added": "2026-09-10",
-      "_comment": "verified live 2026-09-10: answers a real request, enabled",
+      "_comment": "verified live 2026-09-10 (200 OK); promoted from _auto to curated 2026-09-11 (3-miss retirement protection).",
       "execution": {
         "context_length": 128000,
         "max_output_tokens": 8192,
