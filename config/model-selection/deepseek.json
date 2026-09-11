@@ -38,6 +38,8 @@
       "match": "deepseek-v4-flash",
       "priority": 3,
       "enabled": true,
+      "_keep_enabled": true,
+      "_comment": "NOT listed in /v1/models since 2026-09-10 (219+ misses) but answers real requests - verified live 2026-09-11. Catalog absence is not a verdict; do not retire.",
       "execution": {
         "context_length": 1048576,
         "max_output_tokens": 131072,

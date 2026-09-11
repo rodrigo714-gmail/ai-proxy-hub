@@ -41,6 +41,8 @@
       "match": "glm-4.7-flashx",
       "priority": 3,
       "enabled": true,
+      "_keep_enabled": true,
+      "_comment": "Dropped from /v1/models since 2026-09-10. Callability UNVERIFIABLE: the Z.AI account has no balance (code 1113) so every model answers 429. Kept until the account recovers and the roster can be verified (2026-09-11).",
       "execution": {
         "context_length": 131072,
         "max_output_tokens": 65536,
@@ -59,6 +61,8 @@
       "match": "glm-4.7-flash",
       "priority": 4,
       "enabled": true,
+      "_keep_enabled": true,
+      "_comment": "Dropped from /v1/models since 2026-09-10. Callability UNVERIFIABLE: the Z.AI account has no balance (code 1113) so every model answers 429. Kept until the account recovers and the roster can be verified (2026-09-11).",
       "execution": {
         "context_length": 131072,
         "max_output_tokens": 32768,

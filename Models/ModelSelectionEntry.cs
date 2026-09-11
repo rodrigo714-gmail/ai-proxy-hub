@@ -10,4 +10,11 @@
 /// <c>enabled:false</c> or a fresh auto-addition awaiting review — the sync leaves both alone,
 /// which is what keeps ROSTER_AUTO_ENABLE=false from silently self-enabling on the next cycle.
 /// </param>
-public record struct ModelSelectionEntry(string Match, int Priority, bool Enabled, ModelExecutionConfig Execution, string? Upstream = null, bool AutoManaged = false, bool Retired = false);
+/// <param name="KeepEnabled">
+/// Set from <c>_keep_enabled</c>. Exempts an enabled entry from catalog-absence retirement. The
+/// first live run found the false positive: DeepSeek stopped listing <c>deepseek-v4-flash</c> in
+/// <c>/v1/models</c> while the id still answers real requests (catalog ≠ callable, the Cerebras
+/// lesson inverted). A kept entry is never proposed for retirement; the curator's <c>_comment</c>
+/// should record the live verification that justified it.
+/// </param>
+public record struct ModelSelectionEntry(string Match, int Priority, bool Enabled, ModelExecutionConfig Execution, string? Upstream = null, bool AutoManaged = false, bool Retired = false, bool KeepEnabled = false);

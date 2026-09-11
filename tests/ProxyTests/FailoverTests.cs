@@ -10,9 +10,11 @@ namespace ProxyTests;
 /// Boots the proxy with two scriptable upstream providers that both claim the same model, so
 /// failover can actually be exercised.
 ///
-/// `openai/gpt-oss-120b` is enabled in both `groq.json` and `nvidia.json`, which is what makes
+/// `openai/gpt-oss-20b` is enabled in both `groq.json` and `nvidia.json`, which is what makes
 /// `ResolveCandidates` return two candidates for it. Both stubs are OpenAI-format, so all four
 /// chat paths (`/v1/chat/completions` and `/api/chat`, streaming and not) route through them.
+/// (The 120b served this role until NVIDIA retired it with HTTP 410 on 2026-09-11; the roster
+/// sync caught it, and the 20b - also dual-served - is the stable replacement anchor.)
 ///
 /// This lives in its own collection rather than extending <see cref="ProxyFixture"/>: adding a
 /// second provider there would change `X-Proxy-Candidate-Count`, `/v1/models` and cross-provider
@@ -22,7 +24,7 @@ namespace ProxyTests;
 /// </summary>
 public sealed class FailoverFixture : IDisposable
 {
-    internal const string SharedModel = "openai/gpt-oss-120b";
+    internal const string SharedModel = "openai/gpt-oss-20b";
 
     private readonly ProviderEnvScope _envScope;
     private readonly WebApplicationFactory<Program> _factory;

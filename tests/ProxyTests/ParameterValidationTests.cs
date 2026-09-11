@@ -240,8 +240,6 @@ public class ParameterValidationTests
     [InlineData("qwen/qwen3.6-27b")]
     [InlineData("openai/gpt-oss-120b")]
     [InlineData("groq/compound-mini")]
-    [InlineData("llama-3.3-70b-versatile")]
-    [InlineData("llama-3.1-8b-instant")]
     [InlineData("openai/gpt-oss-20b")]
     [InlineData("groq/compound")]
     public void Groq_Models_MaxTokensInjected(string model)
@@ -457,21 +455,19 @@ public class ParameterValidationTests
     [InlineData("gpt-5.4",       400_000,  65_536)]
     [InlineData("gpt-5.4-mini",  200_000,  32_768)]
     [InlineData("o4-mini",       200_000, 100_000)]
-    [InlineData("llama-3.3-70b-versatile",   131_072, 32_768)]
     [InlineData("openai/gpt-oss-20b",         131_072, 65_536)]
     [InlineData("kimi-k2.7-code",            262_144, 131_072)]
     [InlineData("kimi-k2.6",                 262_144, 131_072)]
     [InlineData("moonshot-v1-128k",          131_072,  32_768)]
     [InlineData("moonshot-v1-auto",          131_072,  32_768)]
     [InlineData("moonshot-v1-32k",            32_768,   8_192)]
+    // llama-3.3-70b-versatile and nvidia/llama-3.3-nemotron-super-49b-v1.5 dropped: retired
+    // 2026-09-11 (HTTP 404/410 verified live). zai-glm-4.7 retired the same day (404 archived).
     [InlineData("qwen/qwen3-coder",                  1_048_576, 262_000)]
-    [InlineData("nvidia/llama-3.3-nemotron-super-49b-v1.5", 131_072, 16_384)]
     [InlineData("deepseek/deepseek-v4-pro",          1_048_576, 384_000)]
-    // Cerebras caps this one at 8192 for messages and completion combined, verified live against
-    // the API on 2026-07-31. It was published as 128000 and VS 2026 agent mode believed it, so
-    // every agent turn was rejected with context_length_exceeded. The cap is per-model, not
-    // account-wide: gpt-oss-120b on the same key answered a 10084-token request.
-    [InlineData("zai-glm-4.7",  8_192,   2_048)]
+    // zai-glm-4.7, llama-3.3-70b-versatile and nvidia/llama-3.3-nemotron-super-49b-v1.5 dropped:
+    // retired 2026-09-11 after HTTP 404/410 verified live. The Cerebras 8192-cap lesson that
+    // zai-glm-4.7 taught (published 128000, answered 400 at 13k) lives on in CLAUDE.md.
     [InlineData("gpt-oss-120b", 131_072, 65_536)]
     public void AllModels_HaveCorrectContextWindowConfig(
         string model, int expectedContextLength, int minMaxOutput)
@@ -581,11 +577,11 @@ public class ParameterValidationTests
     [Theory]
     [InlineData("deepseek", 3)]      // v4-pro + v4-flash + deepseek-flash (verified live 2026-09-10; coder-6.7b disabled)
     [InlineData("openai", 4)]        // gpt-5.5, gpt-5.4, gpt-5.4-mini, o4-mini (gpt-5.5-pro is Responses-API only)
-    [InlineData("nvidia", 8)]
-    [InlineData("groq", 8)]          // + qwen/qwen3.8-27b (verified live 2026-09-10)
+    [InlineData("nvidia", 4)]        // -5 retired 2026-09-11 (HTTP 410 Gone, verified live); +1 openai/gpt-oss-20b (verified live, failover anchor)
+    [InlineData("groq", 6)]          // -2 retired 2026-09-11: llama-3.3-70b-versatile, llama-3.1-8b-instant (HTTP 404, verified live)
     [InlineData("openrouter", 10)]
-    [InlineData("moonshot", 6)]      // 6 enabled (kimi-k2.5 disabled)
-    [InlineData("cerebras", 2)]
+    [InlineData("moonshot", 6)]      // 6 enabled (kimi-k2.5 disabled); v1-* kept: account 429s make them unverifiable
+    [InlineData("cerebras", 1)]      // gpt-oss-120b only; zai-glm-4.7 retired 2026-09-11 (HTTP 404 archived, verified live)
     [InlineData("ollama", 11)]       // curated roster + gpt-oss:20b + nemotron-3-nano:30b (verified live 2026-09-10); single ollama.json
     [InlineData("zenmux", 0)]        // whole roster disabled 2026-07-31: HTTP 402 reject_no_credit on every model
     public void EnabledModelCount_IsCorrect(string providerName, int expectedEnabled)

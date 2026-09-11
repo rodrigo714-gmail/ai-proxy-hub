@@ -288,7 +288,11 @@ internal sealed class ModelSelectionStore
                         // entries are re-enabled when the model reappears on the catalog.
                         bool retired = item.TryGetProperty("_retired", out JsonElement retE)
                             && retE.ValueKind == JsonValueKind.True;
-                        entries.Add(new ModelSelectionEntry(matchValue!, priority, enabled, exec, upstream, autoManaged, retired));
+                        // "_keep_enabled": true exempts the entry from catalog-absence retirement —
+                        // for models that answer real requests while /v1/models no longer lists them.
+                        bool keepEnabled = item.TryGetProperty("_keep_enabled", out JsonElement keE)
+                            && keE.ValueKind == JsonValueKind.True;
+                        entries.Add(new ModelSelectionEntry(matchValue!, priority, enabled, exec, upstream, autoManaged, retired, keepEnabled));
                     }
 
                     if (entries.Count > 0)

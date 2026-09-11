@@ -322,10 +322,11 @@ public class ModelSelectionTests
 
         Assert.True(selections.ContainsKey("nvidia"));
         // The curated coding-first picks, all verified present in NVIDIA's live catalog.
+        // z-ai/glm-5.2 was one of them until 2026-09-11, when NVIDIA retired it (HTTP 410 Gone).
         ModelSelectionEntry[] enabled = selections["nvidia"].Where(e => e.Enabled).ToArray();
         Assert.True(enabled.Length >= 3, $"Expected >= 3 enabled NVIDIA models, got {enabled.Length}");
         Assert.Contains(enabled, e => e.Match == "nvidia/nemotron-3-super-120b-a12b");
-        Assert.Contains(enabled, e => e.Match == "z-ai/glm-5.2");
+        Assert.Contains(enabled, e => e.Match == "openai/gpt-oss-20b");
         Assert.Contains(enabled, e => e.Match == "deepseek-ai/deepseek-v4-pro");
     }
 

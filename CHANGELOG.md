@@ -3,6 +3,55 @@
 All notable changes to AI Proxy Hub (formerly "Multi-Provider AI Proxy") will be documented in
 this file.
 
+## 2026-09-11 — Catalog absence is not a verdict: `_keep_enabled`, and the first real retirements
+
+Day two of `ROSTER_MODE=observe`. 15 curated entries had crossed the `ROSTER_RETIRE_AFTER` threshold
+(219–229 consecutive catalog misses), so the diff proposed retiring them. Verifying each against a
+live request before applying — the repo's own doctrine, "verify before editing a roster" — changed
+the answer for six of them.
+
+### Added
+- **`_keep_enabled` — a curator-set exemption from catalog-absence retirement.** `deepseek-v4-flash`
+  had not appeared in `/v1/models` for 219 consecutive checks while still answering real requests
+  with HTTP 200. Retiring it would have removed a working model from VS 2026 on the strength of a
+  listing that lies. `ComputeDiff` now skips any enabled entry marked `_keep_enabled`, so the sync
+  stops re-proposing a settled decision every hour — without this, the first `ROSTER_MODE=sync`
+  cycle would silently kill a model that works.
+
+### Changed
+- **Nine confirmed-dead models retired, each with the live HTTP status recorded in `_comment`:**
+  NVIDIA ×5 (HTTP 410 Gone — `z-ai/glm-5.2`, `openai/gpt-oss-120b`, `minimaxai/minimax-m3`,
+  `nvidia/llama-3.3-nemotron-super-49b-v1.5`, `meta/llama-3.3-70b-instruct`), Groq ×2
+  (`llama-3.3-70b-versatile`, `llama-3.1-8b-instant`, HTTP 404), Cerebras `zai-glm-4.7`
+  (HTTP 404 `model_archived_error` — the 8192-cap note that made it famous is now moot, its text
+  preserved in the merged comment), Google `models/gemini-3-pro-preview` (HTTP 404 "no longer
+  available").
+- **Five proposals declined as unverifiable, kept enabled with the reason recorded:** the three
+  `moonshot-v1-*` and two `glm-4.7-flash*` models. Their accounts are suspended for insufficient
+  balance, so *every* model on them answers 429 — including `kimi-k2.7-code`, which is certainly
+  alive. A 429 from a dead account is not evidence that a model is dead.
+- **`openai/gpt-oss-20b` added to `nvidia.json`** (verified live). NVIDIA's 120b retirement broke
+  the two-provider collision the failover suite is built on; the 20b is dual-served by Groq with
+  the same upstream id, so `FailoverFixture.SharedModel` and the collision tests moved to it. The
+  retired 120b had been NVIDIA's slowest pick anyway (>60s first tokens, timeout raised twice).
+- `EnabledModelCount` updated for the four providers whose enabled sets changed (nvidia 8→4,
+  groq 8→6, cerebras 2→1, google 8→7). The canary did its job: it enumerated every test that
+  referenced a retired model instead of letting any of them rot silently.
+
+### Notes
+- Suite: 597 passed, 1 skipped (602 → 598: five `[InlineData]` rows for retired models were removed
+  rather than pointed at replacements — 2 in `Groq_Models_MaxTokensInjected`, 3 in
+  `AllModels_HaveCorrectContextWindowConfig` — two Cerebras tests inverted to assert the retirement
+  (`ReturnsFalse` / `ReturnsNull`) so the disabled state stays pinned, and one added for
+  `_keep_enabled`).
+- The first attempt at this config edit was a PowerShell regex script that, on entries whose
+  `_comment` sits *before* `match`, wrote a second `_comment` — recreating the exact duplicate-key
+  bug PR #9 had just fixed, and `ConvertFrom-Json` swallowed it silently the way `JsonDocument` had.
+  The edit was redone as surgical per-object replacements with a duplicate-key scan in the gate.
+- DeepSeek's `deepseek-v4-flash` → `deepseek-flash` transition is now fully represented: the new id
+  is enabled (verified 2026-09-10), the old one stays enabled but flagged (verified 2026-09-11),
+  and the sync will leave both alone until a human says otherwise.
+
 ## 2026-09-10 — The model offer renews itself: `ModelRosterSyncService`, a loader that no longer depends on the filesystem, and a build that stops nesting itself
 
 ### Added

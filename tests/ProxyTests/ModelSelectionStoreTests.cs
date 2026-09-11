@@ -121,14 +121,15 @@ public class ModelSelectionStoreTests
     }
 
     [Fact]
-    public void FindModelSelectionEntry_Cerebras_ZaiGlm47_FindsEntry()
+    public void FindModelSelectionEntry_Cerebras_ZaiGlm47_ReturnsNull()
     {
+        // zai-glm-4.7 was retired on 2026-09-11 (HTTP 404 model_archived_error, verified live).
+        // A disabled entry must not resolve - FindModelSelectionEntry skips enabled:false.
         ModelSelectionStore store = new();
 
         ModelSelectionEntry? entry = store.FindModelSelectionEntry("zai-glm-4.7", "cerebras");
 
-        Assert.NotNull(entry);
-        Assert.Equal("zai-glm-4.7", entry.Value.Match);
+        Assert.Null(entry);
     }
 
     [Fact]
@@ -225,13 +226,14 @@ public class ModelSelectionStoreTests
     }
 
     [Fact]
-    public void IsPreferredModel_Cerebras_ZaiGlm47_ReturnsTrue()
+    public void IsPreferredModel_Cerebras_ZaiGlm47_ReturnsFalse()
     {
+        // Retired 2026-09-11 (HTTP 404 archived, verified live): a disabled entry is not preferred.
         ModelSelectionStore store = new();
 
         bool isPreferred = store.IsPreferredModel("zai-glm-4.7", "cerebras");
 
-        Assert.True(isPreferred);
+        Assert.False(isPreferred);
     }
 
     [Fact]
