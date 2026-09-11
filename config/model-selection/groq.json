@@ -55,7 +55,9 @@
     {
       "match": "llama-3.3-70b-versatile",
       "priority": 4,
-      "enabled": true,
+      "enabled": false,
+      "_retired": true,
+      "_comment": "roster sync 2026-09-11: retired - HTTP 404 model does not exist (verified live).",
       "execution": {
         "context_length": 131072,
         "max_output_tokens": 32768,
@@ -69,10 +71,11 @@
       }
     },
     {
-      "_comment": "qwen/qwen3-32b was removed from Groq's catalog (HTTP 404 model_not_found, verified 2026-07-30).",
       "match": "llama-3.1-8b-instant",
       "priority": 5,
-      "enabled": true,
+      "enabled": false,
+      "_retired": true,
+      "_comment": "roster sync 2026-09-11: retired - HTTP 404 model does not exist (verified live). (Earlier note: qwen/qwen3-32b was also removed from Groq's catalog, HTTP 404, verified 2026-07-30.)",
       "execution": {
         "context_length": 131072,
         "max_output_tokens": 32768,

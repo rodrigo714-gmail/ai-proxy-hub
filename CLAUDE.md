@@ -85,9 +85,15 @@ committed; only `.env.example` is tracked.
 
 ## Provider traps that bit us (verify before "fixing")
 
+- **Catalog absence is not a verdict, in either direction.** A model can vanish from
+  `/v1/models` while still answering requests (`deepseek-v4-flash`, 219 misses, HTTP 200 —
+  protected by `_keep_enabled`), and a listed model can be unentitled (Cerebras/Z.AI/Ollama all
+  402/413 ids they publish). A 429 from a suspended account proves nothing about any individual
+  model. Verify by calling the model before enabling or retiring its entry.
 - **Cerebras `zai-glm-4.7`** is capped at **8192 tokens for messages + completion combined**,
   not the 128000 the roster once claimed. The cap is per-model, not account-wide — verify each
-  entry against a live request before trusting a published figure.
+  entry against a live request before trusting a published figure. The model itself was retired
+  2026-09-11 (HTTP 404 archived); the lesson stands.
 - **Groq reports an over-TPM request as HTTP 413** with `rate_limit_exceeded` in the body, and
   charges `prompt + max_tokens` against the per-minute budget — keep `max_tokens` well under it.
 - **Z.AI** puts its API under `https://api.z.ai/api/paas/v4` with a *relative* chat path;

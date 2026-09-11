@@ -181,45 +181,43 @@ public class ModelCatalogServiceTests : IDisposable
     // ── Cross-provider collisions ───────────────────────────────────────
 
     [Fact]
-    public async Task GptOss120b_OfferedByNvidiaGroqOllama_ClaimsLowestPriority()
+    public async Task GptOss20b_OfferedByNvidiaGroq_ClaimsLowestPriority()
     {
-        // Live JSON priorities:
-        //   groq.json   p2 (match "openai/gpt-oss-120b").
-        //   nvidia.json p4 (match "openai/gpt-oss-120b").
-        //   ollama.json's "gpt-oss:120b" is a different upstream id (colon, not dash),
-        //   so ollama is not a claimant here.
+        // Live JSON priorities. openai/gpt-oss-20b is the dual-served anchor after NVIDIA
+        // retired the 120b with HTTP 410 on 2026-09-11:
+        //   groq.json   p6 (match "openai/gpt-oss-20b").
+        //   nvidia.json p9 (match "openai/gpt-oss-20b").
         // Lower priority number wins outright → groq, which also matches reality:
-        // Groq answers this model in ~2s where NVIDIA regularly needs >60s.
+        // Groq answers this model in ~2s where NVIDIA is slower.
         (ModelCatalogService catalog, ProviderRegistry registry, _) =
             BuildCatalog(
                 new Dictionary<string, string[]>
                 {
-                    ["nvidia"] = ["openai/gpt-oss-120b"],
-                    ["groq"] = ["openai/gpt-oss-120b"],
+                    ["nvidia"] = ["openai/gpt-oss-20b"],
+                    ["groq"] = ["openai/gpt-oss-20b"],
                 },
                 ollamaProviders: ["ollama"]);
 
         await catalog.RefreshAvailableModels(CancellationToken.None);
 
-        Assert.Equal("groq", registry.ResolveProvider("openai/gpt-oss-120b").Name);
-        Assert.Equal("groq", registry.ModelToProvider["openai/gpt-oss-120b"].Name);
+        Assert.Equal("groq", registry.ResolveProvider("openai/gpt-oss-20b").Name);
+        Assert.Equal("groq", registry.ModelToProvider["openai/gpt-oss-20b"].Name);
 
         // Both claimants get qualified aliases.
-        Assert.Equal("nvidia", registry.ModelToProvider["openai/gpt-oss-120b@nvidia"].Name);
-        Assert.Equal("groq", registry.ModelToProvider["openai/gpt-oss-120b@groq"].Name);
+        Assert.Equal("nvidia", registry.ModelToProvider["openai/gpt-oss-20b@nvidia"].Name);
+        Assert.Equal("groq", registry.ModelToProvider["openai/gpt-oss-20b@groq"].Name);
 
-        // Failover: groq (p2) first, then nvidia (p4).
+        // Failover: groq (p6) first, then nvidia (p9).
         IReadOnlyList<(ProviderInfo Provider, string UpstreamModel)> cands =
-            registry.ResolveCandidates("openai/gpt-oss-120b");
+            registry.ResolveCandidates("openai/gpt-oss-20b");
         Assert.Equal(2, cands.Count);
         Assert.Equal("groq", cands[0].Provider.Name);
         Assert.Equal("nvidia", cands[1].Provider.Name);
 
-        // The bare "gpt-oss-120b" (no upstream prefix) is NOT exposed by anyone:
-        //   - nvidia's upstream id is "openai/gpt-oss-120b" (not the bare name).
-        //   - groq's upstream id is the same.
-        //   - ollama's "gpt-oss" match is disabled, so ollama doesn't claim the bare id.
-        Assert.False(registry.ModelToProvider.ContainsKey("gpt-oss-120b"));
+        // The bare "gpt-oss-20b" (no upstream prefix) is NOT exposed by anyone:
+        //   - nvidia's and groq's upstream id is "openai/gpt-oss-20b" (not the bare name).
+        //   - ollama's "gpt-oss:20b" uses a colon and is not a claimant here.
+        Assert.False(registry.ModelToProvider.ContainsKey("gpt-oss-20b"));
     }
 
     [Fact]
@@ -403,26 +401,26 @@ public class ModelCatalogServiceTests : IDisposable
     [Fact]
     public async Task QualifiedAlias_AlwaysResolvesToItsOwnProvider()
     {
-        // nvidia and groq both offer "openai/gpt-oss-120b"; ollama offers "gpt-oss-120b".
-        // The qualified alias "openai/gpt-oss-120b@nvidia" must resolve to nvidia,
+        // nvidia and groq both offer "openai/gpt-oss-20b"; ollama offers "gpt-oss:20b".
+        // The qualified alias "openai/gpt-oss-20b@nvidia" must resolve to nvidia,
         // even if the bare-name winner is groq. Single-candidate resolution, no failover.
         (ModelCatalogService catalog, ProviderRegistry registry, _) =
             BuildCatalog(
                 new Dictionary<string, string[]>
                 {
-                    ["nvidia"] = ["openai/gpt-oss-120b"],
-                    ["groq"] = ["openai/gpt-oss-120b"],
-                    ["ollama"] = ["gpt-oss-120b"],
+                    ["nvidia"] = ["openai/gpt-oss-20b"],
+                    ["groq"] = ["openai/gpt-oss-20b"],
+                    ["ollama"] = ["gpt-oss:20b"],
                 },
                 ollamaProviders: ["ollama"]);
 
         await catalog.RefreshAvailableModels(CancellationToken.None);
 
         IReadOnlyList<(ProviderInfo Provider, string UpstreamModel)> cands =
-            registry.ResolveCandidates("openai/gpt-oss-120b@nvidia");
+            registry.ResolveCandidates("openai/gpt-oss-20b@nvidia");
         Assert.Single(cands);
         Assert.Equal("nvidia", cands[0].Provider.Name);
-        Assert.Equal("openai/gpt-oss-120b", cands[0].UpstreamModel);
+        Assert.Equal("openai/gpt-oss-20b", cands[0].UpstreamModel);
     }
 }
 

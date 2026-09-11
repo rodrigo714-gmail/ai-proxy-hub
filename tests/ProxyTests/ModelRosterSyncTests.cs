@@ -202,6 +202,26 @@ public class ModelRosterSyncTests : IDisposable
             c.Kind == RosterChangeKind.Retire && c.Model == "deepseek-v4-flash");
     }
 
+    [Fact]
+    public void ComputeDiff_KeepEnabledEntryNeverProposesRetirement()
+    {
+        // deepseek-v4-flash: 219 consecutive catalog misses while still answering real requests.
+        // The curator marked _keep_enabled after live verification; every later cycle must stop
+        // re-proposing the retirement, or ROSTER_MODE=sync would eventually kill a working model.
+        RosterProviderDiff diff = ModelRosterSyncService.ComputeDiff(
+            "deepseek",
+            ["deepseek-v4-pro", "deepseek-flash"],
+            [
+                Enabled("deepseek-v4-pro"),
+                new ModelSelectionEntry("deepseek-v4-flash", 3, true, new(), KeepEnabled: true),
+            ],
+            Misses(("deepseek-v4-flash", 219)), retireAfter: 3, maxAdditions: 10);
+
+        Assert.DoesNotContain(diff.Changes, c =>
+            (c.Kind == RosterChangeKind.Retire || c.Kind == RosterChangeKind.PendingRetire)
+            && c.Model == "deepseek-v4-flash");
+    }
+
     // ── Safety: a failed fetch must not retire anything ──────────────────────
 
     [Fact]

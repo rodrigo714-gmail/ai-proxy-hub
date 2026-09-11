@@ -262,6 +262,18 @@ internal sealed class ModelRosterSyncService : BackgroundService, IModelRosterOb
         // Retirements: an enabled entry no observed id matches.
         foreach (ModelSelectionEntry entry in entries.Where(e => e.Enabled))
         {
+            // Catalog absence is a retirement signal, not a verdict: some providers keep serving
+            // ids they no longer list (deepseek-v4-flash answered real requests through 219
+            // consecutive catalog misses). A curator who verified that live marks the entry
+            // _keep_enabled, and the sync must stop re-proposing what it was told is a false
+            // positive — otherwise every cycle re-litigates a settled decision until someone
+            // gives up and enables ROSTER_MODE=sync, at which point it silently kills a model
+            // that works.
+            if (entry.KeepEnabled)
+            {
+                continue;
+            }
+
             bool seen = observed.Any(id => id.Contains(entry.Match, StringComparison.OrdinalIgnoreCase));
             if (seen)
             {

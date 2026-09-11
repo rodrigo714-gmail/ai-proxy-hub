@@ -4,8 +4,9 @@
     {
       "match": "zai-glm-4.7",
       "priority": 1,
-      "enabled": true,
-      "_comment": "Cerebras caps this model at 8192 tokens for messages AND completion combined, verified live on 2026-07-31: a 60k prompt answers 'Current length is 60006 while limit is 8192' (code context_length_exceeded). It was published here as 128000, so VS 2026 agent mode trusted that, sent 13k of context and got an HTTP 400 on every turn. The honest figure lets the client trim instead. Even so, 8k is below what VS agent mode usually needs — pick this one for plain chat, not for agent runs.",
+      "enabled": false,
+      "_retired": true,
+      "_comment": "roster sync 2026-09-11: retired - HTTP 404 model_archived_error (verified live). Previously capped at 8192 tokens for messages+completion combined (verified 2026-07-31); the model is now archived at Cerebras, so the cap is moot.",
       "execution": {
         "context_length": 8192,
         "max_output_tokens": 2048,

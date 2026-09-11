@@ -198,6 +198,7 @@ config/model-selection/
 | `models[]._auto` | bool | No | Set by the roster sync on entries it generated. Auto entries retire on the first observed absence; curated entries need `ROSTER_RETIRE_AFTER` consecutive misses. |
 | `models[]._added` | string | No | Date the roster sync added the entry (`YYYY-MM-DD`). |
 | `models[]._retired` | bool | No | Written **only** by the sync when it retires an entry. It marks a disable as the sync's own and reversible: if the model reappears on the provider's catalog, the sync re-enables it. A disabled entry *without* this flag is either a curator's deliberate `enabled:false` or a fresh addition awaiting review — the sync leaves both alone. |
+| `models[]._keep_enabled` | bool | No | Exempts an enabled entry from catalog-absence retirement. For models that answer real requests while `/v1/models` no longer lists them (DeepSeek's `deepseek-v4-flash` did through 219 consecutive misses). Record the live verification in `_comment`. |
 | `models[]._comment` | string | No | Why an entry is disabled — a retirement reason written by the sync, or a curator's note (EOL, not entitled, ToS). |
 
 ### Override Client Params

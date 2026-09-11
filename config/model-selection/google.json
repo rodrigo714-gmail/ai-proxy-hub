@@ -38,7 +38,9 @@
     {
       "match": "models/gemini-3-pro-preview",
       "priority": 3,
-      "enabled": true,
+      "enabled": false,
+      "_retired": true,
+      "_comment": "roster sync 2026-09-11: retired - HTTP 404 'This model is no longer available' (verified live).",
       "execution": {
         "context_length": 2097152,
         "max_output_tokens": 65536,

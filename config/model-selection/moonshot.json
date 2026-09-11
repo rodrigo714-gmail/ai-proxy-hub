@@ -84,6 +84,8 @@
       "match": "moonshot-v1-128k",
       "priority": 5,
       "enabled": true,
+      "_keep_enabled": true,
+      "_comment": "Dropped from /v1/models since 2026-09-10. Callability UNVERIFIABLE: the Moonshot account is suspended for insufficient balance, so every model on it answers 429 - including kimi-k2.7-code, which is certainly alive. Kept until the account recovers and the roster can be verified (2026-09-11).",
       "execution": {
         "context_length": 131072,
         "max_output_tokens": 32768,
@@ -100,6 +102,8 @@
       "match": "moonshot-v1-auto",
       "priority": 6,
       "enabled": true,
+      "_keep_enabled": true,
+      "_comment": "Dropped from /v1/models since 2026-09-10. Callability UNVERIFIABLE: the Moonshot account is suspended for insufficient balance (429 on every model). Kept until the account recovers and the roster can be verified (2026-09-11).",
       "execution": {
         "context_length": 131072,
         "max_output_tokens": 32768,
@@ -116,6 +120,8 @@
       "match": "moonshot-v1-32k",
       "priority": 7,
       "enabled": true,
+      "_keep_enabled": true,
+      "_comment": "Dropped from /v1/models since 2026-09-10. Callability UNVERIFIABLE: the Moonshot account is suspended for insufficient balance (429 on every model). Kept until the account recovers and the roster can be verified (2026-09-11).",
       "execution": {
         "context_length": 32768,
         "max_output_tokens": 8192,
