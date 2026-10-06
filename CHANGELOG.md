@@ -11,6 +11,9 @@ with live chat completions to discern between dead models (404/410), account sus
 and active working models (200 OK).
 
 ### Added
+- **`codestral-latest` enabled in `mistral.json`:** Verified live (HTTP 200 OK, 478ms latency).
+- **Three Cloudflare Workers AI models enabled in `cloudflare.json`:** `@cf/meta/llama-3.3-70b-instruct-fp8-fast` (753ms),
+  `@cf/qwen/qwen2.5-coder-32b-instruct` (691ms), `@cf/meta/llama-3.1-8b-instruct-fast` (543ms), all verified live (HTTP 200 OK).
 - **`gemma4:31b` promoted to enabled in `ollama.json`:** Verified live (HTTP 200 OK, 599ms latency).
 - **`qwen/qwen3.8-27b` active in `groq.json`:** Configured with mandatory `max_tokens: 4096` TPM limit
   protection and verified live (HTTP 200 OK, 313ms).

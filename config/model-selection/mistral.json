@@ -37,10 +37,11 @@
       }
     },
     {
-      "_comment": "Fill-in-the-middle / completion model. Same billing caveat as Devstral.",
+      "_comment": "Fill-in-the-middle / completion model. Verified live 2026-10-06 (HTTP 200 OK, 478ms).",
       "match": "codestral-latest",
       "priority": 3,
-      "enabled": false,
+      "enabled": true,
+      "_added": "2026-10-06",
       "execution": {
         "context_length": 262144,
         "max_output_tokens": 32768,

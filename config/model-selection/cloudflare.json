@@ -3,10 +3,11 @@
   "_comment": "Cloudflare Workers AI. The free Workers plan grants 10,000 neurons/day, reset at UTC midnight — roughly 200-400 requests/day on a small model, and far fewer on a large one, since bigger models burn more neurons per request. Exhaustion arrives as HTTP 429 with 'you have used up your daily free allocation', which UpstreamFailureClassifier maps to QuotaExhausted/Daily and stands the provider down until midnight. REQUIRES PROVIDER_CLOUDFLARE_BASE_URL: the base URL embeds your account id and has no usable default, so the provider is skipped at startup until you set it. Models ship DISABLED — verify with ./scripts/test-all-providers.ps1 first.",
   "models": [
     {
-      "_comment": "Verify with ./scripts/test-all-providers.ps1, then set enabled=true. Small models stretch the daily neuron budget furthest.",
+      "_comment": "Verified live 2026-10-06 (HTTP 200 OK, 753ms).",
       "match": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
       "priority": 1,
-      "enabled": false,
+      "enabled": true,
+      "_added": "2026-10-06",
       "execution": {
         "context_length": 24000,
         "max_output_tokens": 4096,
@@ -20,10 +21,11 @@
       }
     },
     {
-      "_comment": "Verify with ./scripts/test-all-providers.ps1 before enabling.",
+      "_comment": "Verified live 2026-10-06 (HTTP 200 OK, 691ms).",
       "match": "@cf/qwen/qwen2.5-coder-32b-instruct",
       "priority": 2,
-      "enabled": false,
+      "enabled": true,
+      "_added": "2026-10-06",
       "execution": {
         "context_length": 32768,
         "max_output_tokens": 4096,
@@ -37,10 +39,11 @@
       }
     },
     {
-      "_comment": "Verify with ./scripts/test-all-providers.ps1 before enabling.",
+      "_comment": "Verified live 2026-10-06 (HTTP 200 OK, 543ms).",
       "match": "@cf/meta/llama-3.1-8b-instruct-fast",
       "priority": 3,
-      "enabled": false,
+      "enabled": true,
+      "_added": "2026-10-06",
       "execution": {
         "context_length": 8192,
         "max_output_tokens": 4096,

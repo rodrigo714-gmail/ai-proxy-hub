@@ -584,6 +584,8 @@ public class ParameterValidationTests
     [InlineData("moonshot", 6)]      // 6 enabled (kimi-k2.5 disabled); v1-* kept: account 429s make them unverifiable
     [InlineData("cerebras", 1)]      // gpt-oss-120b only; zai-glm-4.7 retired 2026-09-11 (HTTP 404 archived, verified live)
     [InlineData("ollama", 10)]       // -2 retired (HTTP 410 Gone: glm-5.1, deepseek-v4-flash); +1 gemma4:31b (HTTP 200 OK, verified live 2026-10-06)
+    [InlineData("mistral", 1)]       // codestral-latest enabled (verified live 2026-10-06 HTTP 200 OK)
+    [InlineData("cloudflare", 3)]    // llama-3.3-70b, qwen2.5-coder-32b, llama-3.1-8b (verified live 2026-10-06 HTTP 200 OK)
     [InlineData("zenmux", 0)]        // whole roster disabled 2026-07-31: HTTP 402 reject_no_credit on every model
     public void EnabledModelCount_IsCorrect(string providerName, int expectedEnabled)
     {
