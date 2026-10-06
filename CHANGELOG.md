@@ -3,6 +3,36 @@
 All notable changes to AI Proxy Hub (formerly "Multi-Provider AI Proxy") will be documented in
 this file.
 
+## 2026-10-06 — Live roster verification: retirements, promotions, and aligning enabled model counts
+
+Full diagnostic sweep across all 14 providers against live APIs and discovery endpoints. In accordance
+with the repository's doctrine ("verify before editing a roster"), each candidate was tested directly
+with live chat completions to discern between dead models (404/410), account suspensions (401/402/429),
+and active working models (200 OK).
+
+### Added
+- **`gemma4:31b` promoted to enabled in `ollama.json`:** Verified live (HTTP 200 OK, 599ms latency).
+- **`qwen/qwen3.8-27b` active in `groq.json`:** Configured with mandatory `max_tokens: 4096` TPM limit
+  protection and verified live (HTTP 200 OK, 313ms).
+
+### Changed
+- **Five confirmed-dead models retired with verified status recorded in `_comment`:**
+  - Google: `models/gemini-2.5-pro` (HTTP 404 Not Found — officially phased out in favor of Gemini 3.x series).
+  - Groq: `groq/compound` and `groq/compound-mini` (HTTP 404 `model_not_found` — removed from completions).
+  - Ollama Cloud: `glm-5.1` and `deepseek-v4-flash` (HTTP 410 Gone).
+  - NVIDIA: `deepseek-ai/deepseek-v4-pro` (HTTP 404 / not offered upstream).
+- **Accounts with quota/balance suspensions preserved as enabled:**
+  - Moonshot (HTTP 429 balance), Z.AI paid models (HTTP 429), Cerebras (HTTP 402 credits), ZenMux (HTTP 402),
+    OpenAI (HTTP 401 key). A 429/402 from a depleted account is not evidence that a model is dead.
+- **Test suite aligned and 100% green (598 passed, 1 skipped):**
+  - `ParameterValidationTests.EnabledModelCount_IsCorrect` updated to reflect verified live rosters:
+    NVIDIA (4→3), Groq (6→3), Ollama (11→10), Google pinned at 6.
+  - `ParameterValidationTests.Groq_Models_MaxTokensInjected` points to the active `qwen/qwen3.8-27b`,
+    `openai/gpt-oss-120b`, `openai/gpt-oss-20b`.
+  - `ModelSelectionTests.NvidiaJson_CodingModelsHaveHighestPriority` expects `nemotron-3-ultra-550b-a55b`.
+  - `RequestTransformerTests` tests `supports_tools: false` stripping via an isolated test directory seam.
+
+
 ## 2026-09-11 — Catalog absence is not a verdict: `_keep_enabled`, and the first real retirements
 
 Day two of `ROSTER_MODE=observe`. 15 curated entries had crossed the `ROSTER_RETIRE_AFTER` threshold

@@ -480,6 +480,5110 @@
         "family": "api",
         "timeout_seconds": 120
       }
+    },
+    {
+      "match": "anthropic/claude-opus-5",
+      "priority": 31,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-opus-5:batch",
+      "priority": 32,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-sonnet-4",
+      "priority": 33,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-sonnet-4.5",
+      "priority": 34,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-sonnet-4.5:batch",
+      "priority": 35,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-sonnet-5",
+      "priority": 36,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "anthropic/claude-sonnet-5:batch",
+      "priority": 37,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "arcee-ai/trinity-large-thinking",
+      "priority": 38,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "baidu/ernie-4.5-vl-424b-a47b",
+      "priority": 39,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "bytedance-seed/seed-1.6",
+      "priority": 40,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "bytedance-seed/seed-2-1-turbo",
+      "priority": 41,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "bytedance-seed/seed-2.0-code",
+      "priority": 42,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "bytedance-seed/seed-2.0-lite",
+      "priority": 43,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "bytedance-seed/seed-2.0-mini",
+      "priority": 44,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "bytedance/ui-tars-1.5-7b",
+      "priority": 45,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "cognitivecomputations/dolphin-mistral-24b-venice-edition",
+      "priority": 46,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "cohere/command-a",
+      "priority": 47,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "cohere/command-r-08-2024",
+      "priority": 48,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "cohere/command-r-plus-08-2024",
+      "priority": 49,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "cohere/command-r7b-12-2024",
+      "priority": 50,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "cohere/north-mini-code:free",
+      "priority": 51,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-chat",
+      "priority": 52,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-chat-v3-0324",
+      "priority": 53,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-chat-v3.1",
+      "priority": 54,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-r1",
+      "priority": 55,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-r1-0528",
+      "priority": 56,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-r1-distill-llama-70b",
+      "priority": 57,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-v3.1-terminus",
+      "priority": 58,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-v3.2",
+      "priority": 59,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-v3.2-exp",
+      "priority": 60,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-v4-flash",
+      "priority": 61,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-v4-flash-0731",
+      "priority": 62,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-v4-flash-0731:batch",
+      "priority": 63,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-v4-flash-vision-exp",
+      "priority": 64,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-v4-flash-vision-exp:batch",
+      "priority": 65,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "deepseek/deepseek-v4.1-flash",
+      "priority": 66,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "dots-studio/dots-3-note-preview:free",
+      "priority": 67,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-2.5-flash",
+      "priority": 68,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-2.5-flash-image",
+      "priority": 69,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-2.5-flash-lite",
+      "priority": 70,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-2.5-pro",
+      "priority": 71,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-2.5-pro-preview",
+      "priority": 72,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-2.5-pro-preview-05-06",
+      "priority": 73,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-2.5-pro:batch",
+      "priority": 74,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3-flash-preview",
+      "priority": 75,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3-flash-preview:batch",
+      "priority": 76,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3-pro-image",
+      "priority": 77,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3-pro-image-preview",
+      "priority": 78,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.1-flash-image",
+      "priority": 79,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.1-flash-image-preview",
+      "priority": 80,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.1-flash-lite",
+      "priority": 81,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.1-flash-lite-image",
+      "priority": 82,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.1-flash-lite-preview",
+      "priority": 83,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.1-flash-lite:batch",
+      "priority": 84,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.1-pro-preview",
+      "priority": 85,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.1-pro-preview-customtools",
+      "priority": 86,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.1-pro-preview:batch",
+      "priority": 87,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.6-flash",
+      "priority": 88,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.6-flash:batch",
+      "priority": 89,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.7-flash",
+      "priority": 90,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.8-flash",
+      "priority": 91,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemini-3.8-flash:batch",
+      "priority": 92,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-2-27b-it",
+      "priority": 93,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 8192,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-3-12b-it",
+      "priority": 94,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-3-27b-it",
+      "priority": 95,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-3-4b-it",
+      "priority": 96,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-4-26b-a4b-it",
+      "priority": 97,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-4-26b-a4b-it:free",
+      "priority": 98,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-4-31b-it",
+      "priority": 99,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/gemma-4-31b-it:batch",
+      "priority": 100,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "google/lyria-3-pro-preview",
+      "priority": 101,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "gryphe/mythomax-l2-13b",
+      "priority": 102,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "ibm-granite/granite-4.0-h-micro",
+      "priority": 103,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "ibm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "ibm-granite/granite-4.2-8b",
+      "priority": 104,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "ibm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "inception/mercury-2",
+      "priority": 105,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "inception/mercury-2.5",
+      "priority": 106,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "inclusionai/ling-3.0-flash",
+      "priority": 107,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "inclusionai/ling-3.0-flash-fin",
+      "priority": 108,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "inclusionai/ling-3.0-flash-fin:free",
+      "priority": 109,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "inclusionai/ling-3.0-flash-sante:free",
+      "priority": 110,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "inference-net/schematron-v2-small",
+      "priority": 111,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "inference-net/schematron-v2-turbo",
+      "priority": 112,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "kwaipilot/kat-coder-pro-v2",
+      "priority": 113,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "kwaipilot/kat-coder-pro-v2.5",
+      "priority": 114,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "liquid/lfm-2.5-2.6b:free",
+      "priority": 115,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mancer/weaver",
+      "priority": 116,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meituan/longcat-2.0",
+      "priority": 117,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta-llama/llama-3.1-70b-instruct",
+      "priority": 118,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta-llama/llama-3.1-8b-instruct",
+      "priority": 119,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta-llama/llama-3.2-1b-instruct",
+      "priority": 120,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta-llama/llama-3.2-3b-instruct",
+      "priority": 121,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta-llama/llama-3.3-70b-instruct",
+      "priority": 122,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta-llama/llama-4-maverick",
+      "priority": 123,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta-llama/llama-4-scout",
+      "priority": 124,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/muse-glimmer-30b",
+      "priority": 125,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/muse-glimmer-30b:batch",
+      "priority": 126,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/muse-spark-1.1",
+      "priority": 127,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/muse-spark-1.2",
+      "priority": 128,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/muse-spark-1.2-contributor",
+      "priority": 129,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/muse-spark-1.3",
+      "priority": 130,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "microsoft/phi-4",
+      "priority": 131,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "microsoft",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "microsoft/wizardlm-2-8x22b",
+      "priority": 132,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "minimax/minimax-01",
+      "priority": 133,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "minimax/minimax-m1",
+      "priority": 134,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "minimax/minimax-m2",
+      "priority": 135,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "minimax/minimax-m2-her",
+      "priority": 136,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "minimax/minimax-m2.1",
+      "priority": 137,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "minimax/minimax-m2.5",
+      "priority": 138,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "minimax/minimax-m2.7",
+      "priority": 139,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "minimax/minimax-m3",
+      "priority": 140,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "minimax",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/codestral-2508",
+      "priority": 141,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/codestral-2508:batch",
+      "priority": 142,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/devstral-2512",
+      "priority": 143,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/ministral-14b-2512",
+      "priority": 144,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/ministral-3b-2512",
+      "priority": 145,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/ministral-8b-2512",
+      "priority": 146,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/ministral-8b-2512:batch",
+      "priority": 147,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-large",
+      "priority": 148,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-large-2407",
+      "priority": 149,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-large-2512",
+      "priority": 150,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-medium-3",
+      "priority": 151,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-medium-3-5",
+      "priority": 152,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-medium-3-5:batch",
+      "priority": 153,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-medium-3.1",
+      "priority": 154,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-medium-3.1:batch",
+      "priority": 155,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-nemo",
+      "priority": 156,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-saba",
+      "priority": 157,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-small-24b-instruct-2501",
+      "priority": 158,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-small-2603",
+      "priority": 159,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-small-2603:batch",
+      "priority": 160,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-small-3.1-24b-instruct",
+      "priority": 161,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-small-3.2-24b-instruct",
+      "priority": 162,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mixtral-8x22b-instruct",
+      "priority": 163,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 65536,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/voxtral-small-24b-2507",
+      "priority": 164,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "moonshotai/kimi-k2",
+      "priority": 165,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "moonshotai/kimi-k2-0905",
+      "priority": 166,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "moonshotai/kimi-k2-thinking",
+      "priority": 167,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "moonshotai/kimi-k2.5",
+      "priority": 168,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "moonshotai/kimi-k3",
+      "priority": 169,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "moonshotai/kimi-k3:batch",
+      "priority": 170,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "morph/morph-v3-fast",
+      "priority": 171,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "morph/morph-v3-large",
+      "priority": 172,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nex-agi/nex-n2.5-mini:free",
+      "priority": 173,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nex-agi/nex-n2.5-pro:free",
+      "priority": 174,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nousresearch/hermes-3-llama-3.1-405b",
+      "priority": 175,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nousresearch/hermes-3-llama-3.1-70b",
+      "priority": 176,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nousresearch/hermes-4-405b",
+      "priority": 177,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/nemotron-3-nano-30b-a3b",
+      "priority": 178,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "priority": 179,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/nemotron-3-ultra-550b-a55b",
+      "priority": 180,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/nemotron-3.5-lightning",
+      "priority": 181,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/nemotron-3.5-lightning:free",
+      "priority": 182,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-3.5-turbo",
+      "priority": 183,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-3.5-turbo-0613",
+      "priority": 184,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-3.5-turbo-16k",
+      "priority": 185,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-3.5-turbo-instruct",
+      "priority": 186,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-3.5-turbo:batch",
+      "priority": 187,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-4",
+      "priority": 188,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-4-turbo",
+      "priority": 189,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-4-turbo:batch",
+      "priority": 190,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-5",
+      "priority": 191,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-5-image",
+      "priority": 192,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-5-image-mini",
+      "priority": 193,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-5-mini",
+      "priority": 194,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-5-mini:batch",
+      "priority": 195,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-5-nano",
+      "priority": 196,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-5-nano:batch",
+      "priority": 197,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-5-pro",
+      "priority": 198,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-5-pro:batch",
+      "priority": 199,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-5.1",
+      "priority": 200,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-6-astra",
+      "priority": 201,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-6-astra-pro",
+      "priority": 202,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-6-astra-pro:batch",
+      "priority": 203,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-6-astra:batch",
+      "priority": 204,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-audio",
+      "priority": 205,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-audio-mini",
+      "priority": 206,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-chat-latest",
+      "priority": 207,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-oss-120b",
+      "priority": 208,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "openai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-oss-120b:batch",
+      "priority": 209,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "openai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/gpt-oss-20b",
+      "priority": 210,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 131072,
+        "max_output_tokens": 65536,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "openai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/o1",
+      "priority": 211,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/o1-pro",
+      "priority": 212,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/o3",
+      "priority": 213,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/o3-mini",
+      "priority": 214,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/o3-mini-high",
+      "priority": 215,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/o3-mini:batch",
+      "priority": 216,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/o3-pro",
+      "priority": 217,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/o3:batch",
+      "priority": 218,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/o4-mini",
+      "priority": 219,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 200000,
+        "max_output_tokens": 100000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "openai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openai/o4-mini-high",
+      "priority": 220,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 200000,
+        "max_output_tokens": 100000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "openai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openrouter/auto",
+      "priority": 221,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openrouter/auto-beta",
+      "priority": 222,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openrouter/bodybuilder",
+      "priority": 223,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openrouter/free",
+      "priority": 224,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openrouter/fusion",
+      "priority": 225,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "openrouter/pareto-code",
+      "priority": 226,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "perceptron/perceptron-mk1",
+      "priority": 227,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "perplexity/sonar",
+      "priority": 228,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "perplexity/sonar-deep-research",
+      "priority": 229,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "perplexity/sonar-pro",
+      "priority": 230,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "poolside/laguna-s-2.1",
+      "priority": 231,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "poolside/laguna-s-2.1:free",
+      "priority": 232,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "poolside/laguna-xs-2.1",
+      "priority": 233,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "poolside/laguna-xs-2.1:free",
+      "priority": 234,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen-2.5-72b-instruct",
+      "priority": 235,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen-2.5-7b-instruct",
+      "priority": 236,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen-2.5-coder-32b-instruct",
+      "priority": 237,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen-plus",
+      "priority": 238,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen-plus-2025-07-28",
+      "priority": 239,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen2.5-vl-72b-instruct",
+      "priority": 240,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-14b",
+      "priority": 241,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-235b-a22b",
+      "priority": 242,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-235b-a22b-2507",
+      "priority": 243,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-235b-a22b-thinking-2507",
+      "priority": 244,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-30b-a3b",
+      "priority": 245,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-30b-a3b-instruct-2507",
+      "priority": 246,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-30b-a3b-thinking-2507",
+      "priority": 247,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-32b",
+      "priority": 248,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-8b",
+      "priority": 249,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-max",
+      "priority": 250,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-next-80b-a3b-instruct",
+      "priority": 251,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-next-80b-a3b-thinking",
+      "priority": 252,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-vl-235b-a22b-instruct",
+      "priority": 253,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-vl-235b-a22b-thinking",
+      "priority": 254,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-vl-30b-a3b-instruct",
+      "priority": 255,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-vl-30b-a3b-thinking",
+      "priority": 256,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-vl-32b-instruct",
+      "priority": 257,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-vl-8b-instruct",
+      "priority": 258,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3-vl-8b-thinking",
+      "priority": 259,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.5-122b-a10b",
+      "priority": 260,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.5-27b",
+      "priority": 261,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.5-35b-a3b",
+      "priority": 262,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.5-397b-a17b",
+      "priority": 263,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.5-9b",
+      "priority": 264,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.5-9b:batch",
+      "priority": 265,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.5-flash-02-23",
+      "priority": 266,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.5-plus-02-15",
+      "priority": 267,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.5-plus-20260420",
+      "priority": 268,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.6-27b",
+      "priority": 269,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.6-35b-a3b",
+      "priority": 270,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.6-flash",
+      "priority": 271,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.6-max-preview",
+      "priority": 272,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.6-plus",
+      "priority": 273,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.7-flash",
+      "priority": 274,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.7-max",
+      "priority": 275,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.8-2.4t-a95b",
+      "priority": 276,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.8-2.4t-a95b:batch",
+      "priority": 277,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.8-27b",
+      "priority": 278,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.8-flash",
+      "priority": 279,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "qwen/qwen3.8-max-0902",
+      "priority": 280,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "qwen",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "rekaai/reka-edge",
+      "priority": 281,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "rekaai/reka-flash-3",
+      "priority": 282,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "relace/relace-apply-3",
+      "priority": 283,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "relace/relace-search",
+      "priority": 284,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "sakana/fugu-max",
+      "priority": 285,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "sakana/fugu-ultra",
+      "priority": 286,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "sakana/fugu-ultra-v2",
+      "priority": 287,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "sakana/sakana-namazu",
+      "priority": 288,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "sao10k/l3-lunaris-8b",
+      "priority": 289,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "sao10k/l3.1-euryale-70b",
+      "priority": 290,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "sao10k/l3.3-euryale-70b",
+      "priority": 291,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "stepfun/step-3.5-flash",
+      "priority": 292,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "stepfun/step-3.7-flash",
+      "priority": 293,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "tencent/hunyuan-a13b-instruct",
+      "priority": 294,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "tencent/hy-mt2-1.8b",
+      "priority": 295,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "tencent/hy-mt2-30b-a3b",
+      "priority": 296,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "tencent/hy-mt2-7b",
+      "priority": 297,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "tencent/hy3",
+      "priority": 298,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "tencent/hy3-preview",
+      "priority": 299,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "tencent/hy4-preview",
+      "priority": 300,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "thedrummer/cydonia-24b-v4.1",
+      "priority": 301,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "thedrummer/skyfall-36b-v2",
+      "priority": 302,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "thedrummer/unslopnemo-12b",
+      "priority": 303,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "thinkingmachines/inkling",
+      "priority": 304,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "thinkingmachines/inkling-small",
+      "priority": 305,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "thinkingmachines/inkling-small:free",
+      "priority": 306,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "thinkingmachines/inkling:batch",
+      "priority": 307,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "thinkingmachines/inkling:free",
+      "priority": 308,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "undi95/remm-slerp-l2-13b",
+      "priority": 309,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "upstage/solar-pro-3",
+      "priority": 310,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 4096,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "upstage/solar-pro4",
+      "priority": 311,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 4096,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "writer/palmyra-x5",
+      "priority": 312,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "x-ai/grok-4.20",
+      "priority": 313,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "x-ai/grok-4.20-multi-agent",
+      "priority": 314,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "x-ai/grok-4.5",
+      "priority": 315,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "x-ai/grok-4.6",
+      "priority": 316,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "x-ai/grok-build-0.1",
+      "priority": 317,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "xiaomi/mimo-v2.5",
+      "priority": 318,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "xiaomi/mimo-v2.5-pro",
+      "priority": 319,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-4.5",
+      "priority": 320,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-4.6",
+      "priority": 321,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-4.6v",
+      "priority": 322,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-4.7",
+      "priority": 323,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "glm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-4.7-flash",
+      "priority": 324,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 131072,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "glm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-5",
+      "priority": 325,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-5-turbo",
+      "priority": 326,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-5.1",
+      "priority": 327,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "glm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-5.2",
+      "priority": 328,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "glm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-5.2:batch",
+      "priority": 329,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "glm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-5.2:free",
+      "priority": 330,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 65536,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "glm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "stealth/union-alpha",
+      "priority": 331,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~anthropic/claude-fable-latest",
+      "priority": 332,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~anthropic/claude-haiku-latest",
+      "priority": 333,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~anthropic/claude-opus-latest",
+      "priority": 334,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~anthropic/claude-sonnet-latest",
+      "priority": 335,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~deepseek/deepseek-flash-latest",
+      "priority": 336,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~deepseek/deepseek-pro-latest",
+      "priority": 337,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 1000000,
+        "max_output_tokens": 384000,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "deepseek",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~google/gemini-flash-latest",
+      "priority": 338,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~google/gemini-pro-latest",
+      "priority": 339,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~moonshotai/kimi-latest",
+      "priority": 340,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~openai/gpt-astra-latest",
+      "priority": 341,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~openai/gpt-luna-latest",
+      "priority": 342,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~openai/gpt-mini-latest",
+      "priority": 343,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~openai/gpt-sol-latest",
+      "priority": 344,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~openai/gpt-terra-latest",
+      "priority": 345,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~x-ai/grok-latest",
+      "priority": 346,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~z-ai/glm-flash-latest",
+      "priority": 347,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~z-ai/glm-latest",
+      "priority": 348,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-16",
+      "_comment": "roster sync 2026-09-16: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "~typesafe/jev-latest",
+      "priority": 349,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-17",
+      "_comment": "roster sync 2026-09-17: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
     }
   ]
 }

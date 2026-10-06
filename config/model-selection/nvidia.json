@@ -39,7 +39,7 @@
     {
       "match": "deepseek-ai/deepseek-v4-pro",
       "priority": 3,
-      "enabled": true,
+      "enabled": false,
       "execution": {
         "context_length": 1048576,
         "max_output_tokens": 65536,
@@ -50,7 +50,9 @@
         "top_p": 0.9,
         "max_tokens": 8192,
         "timeout_seconds": 180
-      }
+      },
+      "_retired": true,
+      "_comment": "roster sync 2026-09-14: retired — not offered for 13 consecutive checks (threshold 3); verified live 2026-10-06 (HTTP 404/not offered)."
     },
     {
       "match": "openai/gpt-oss-120b",
@@ -525,6 +527,598 @@
         "supports_tools": true,
         "supports_vision": false,
         "family": "ibm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "ibm/granite-8b-code-instruct",
+      "priority": 43,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "ibm",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/codellama-70b",
+      "priority": 44,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 4096,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/llama-3.2-11b-vision-instruct",
+      "priority": 45,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/llama-3.2-90b-vision-instruct",
+      "priority": 46,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/llama2-70b",
+      "priority": 47,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "meta/muse-glimmer-30b",
+      "priority": 48,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "microsoft/kosmos-2",
+      "priority": 49,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "microsoft/phi-3-vision-128k-instruct",
+      "priority": 50,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "microsoft",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "microsoft/phi-3.5-moe-instruct",
+      "priority": 51,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "microsoft",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/codestral-22b-instruct-v0.1",
+      "priority": 52,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-7b-instruct-v0.3",
+      "priority": 53,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-large",
+      "priority": 54,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-large-2-instruct",
+      "priority": 55,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mistral-nemotron",
+      "priority": 56,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "mistralai/mixtral-8x22b-v0.1",
+      "priority": 57,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 65536,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "moonshotai/kimi-k3",
+      "priority": 58,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nv-mistralai/mistral-nemo-12b-instruct",
+      "priority": 59,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/ising-calibration-1.5-31b",
+      "priority": 60,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/llama-3.1-nemotron-51b-instruct",
+      "priority": 61,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/llama-3.1-nemotron-70b-instruct",
+      "priority": 62,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
+      "priority": 63,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/llama3-chatqa-1.5-70b",
+      "priority": 64,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "meta",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/mistral-nemo-minitron-8b-8k-instruct",
+      "priority": 65,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "mistralai",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "priority": 66,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "priority": 67,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/nemotron-4-340b-instruct",
+      "priority": 68,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/nemotron-nano-3-30b-a3b",
+      "priority": 69,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "nvidia",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/neva-22b",
+      "priority": 70,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "nvidia/vila",
+      "priority": 71,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": true,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "poolside/laguna-xs-2.1",
+      "priority": 72,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "writer/palmyra-creative-122b",
+      "priority": 73,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "writer/palmyra-fin-70b-32k",
+      "priority": 74,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "writer/palmyra-med-70b",
+      "priority": 75,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "writer/palmyra-med-70b-32k",
+      "priority": 76,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 32768,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-5.3-flash",
+      "priority": 77,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "zyphra/zamba2-7b-instruct",
+      "priority": 78,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 4096,
+        "max_output_tokens": 4096,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "z-ai/glm-5.3",
+      "priority": 79,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 32768,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
         "timeout_seconds": 120
       }
     }

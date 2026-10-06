@@ -1,0 +1,90 @@
+{
+  "generated_at_utc": "2026-10-06T13:17:34.0305934Z",
+  "summary": {
+    "total": 8,
+    "list_ok": 6,
+    "chat_ok": 3
+  },
+  "providers": [
+    {
+      "provider": "deepseek",
+      "list_status": "http_",
+      "models_count": 0,
+      "chat_status": "not_tested",
+      "chat_model": "",
+      "latency_ms": 0,
+      "sample_text": "",
+      "error": "Host desconocido. (api.deepseek.com:443)"
+    },
+    {
+      "provider": "openai",
+      "list_status": "http_401",
+      "models_count": 0,
+      "chat_status": "not_tested",
+      "chat_model": "",
+      "latency_ms": 0,
+      "sample_text": "",
+      "error": "El código de estado de la respuesta no indica un resultado correcto: 401 (Unauthorized)."
+    },
+    {
+      "provider": "groq",
+      "list_status": "ok",
+      "models_count": 11,
+      "chat_status": "ok",
+      "chat_model": "qwen/qwen3.8-27b",
+      "latency_ms": 260,
+      "sample_text": "OK",
+      "error": ""
+    },
+    {
+      "provider": "openrouter",
+      "list_status": "ok",
+      "models_count": 464,
+      "chat_status": "ok",
+      "chat_model": "qwen/qwen3.8-max-prime",
+      "latency_ms": 2405,
+      "sample_text": "OK",
+      "error": ""
+    },
+    {
+      "provider": "nvidia",
+      "list_status": "ok",
+      "models_count": 80,
+      "chat_status": "http_404",
+      "chat_model": "deepseek-ai/deepseek-coder-6.7b-instruct",
+      "latency_ms": 0,
+      "sample_text": "",
+      "error": "Error en la invocación del método porque [System.Net.Http.HttpResponseMessage] no contiene un método denominado ''GetResponseStream\"."
+    },
+    {
+      "provider": "moonshot",
+      "list_status": "ok",
+      "models_count": 4,
+      "chat_status": "http_429",
+      "chat_model": "kimi-k3",
+      "latency_ms": 0,
+      "sample_text": "",
+      "error": "Error en la invocación del método porque [System.Net.Http.HttpResponseMessage] no contiene un método denominado ''GetResponseStream\"."
+    },
+    {
+      "provider": "ollama-cloud",
+      "list_status": "ok",
+      "models_count": 17,
+      "chat_status": "ok",
+      "chat_model": "gpt-oss:120b",
+      "latency_ms": 724,
+      "sample_text": "OK",
+      "error": ""
+    },
+    {
+      "provider": "cerebras",
+      "list_status": "ok",
+      "models_count": 2,
+      "chat_status": "http_402",
+      "chat_model": "gpt-oss-120b",
+      "latency_ms": 0,
+      "sample_text": "",
+      "error": "Error en la invocación del método porque [System.Net.Http.HttpResponseMessage] no contiene un método denominado ''GetResponseStream\"."
+    }
+  ]
+}

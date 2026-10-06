@@ -6,7 +6,7 @@
     {
       "match": "qwen/qwen3.6-27b",
       "priority": 1,
-      "enabled": true,
+      "enabled": false,
       "execution": {
         "context_length": 131072,
         "max_output_tokens": 32768,
@@ -17,7 +17,9 @@
         "top_p": 0.95,
         "max_tokens": 4096,
         "timeout_seconds": 60
-      }
+      },
+      "_retired": true,
+      "_comment": "roster sync 2026-09-15: retired — not offered for 3 consecutive checks (threshold 3)"
     },
     {
       "match": "openai/gpt-oss-120b",
@@ -36,10 +38,11 @@
       }
     },
     {
-      "_comment": "meta-llama/llama-4-scout-17b-16e-instruct was removed from Groq's catalog (HTTP 404 model_not_found, verified 2026-07-30). Compound models run Groq's own server-side tools and answer HTTP 400 to any client tools payload; supports_tools=false makes RequestTransformer strip tools/tool_choice.",
+      "_comment": "retired 2026-10-06: HTTP 404 model_not_found (verified live). Groq removed compound models. (Earlier note: meta-llama/llama-4-scout-17b-16e-instruct was removed from Groq's catalog).",
       "match": "groq/compound-mini",
       "priority": 3,
-      "enabled": true,
+      "enabled": false,
+      "_retired": true,
       "execution": {
         "context_length": 131072,
         "max_output_tokens": 8192,
@@ -105,10 +108,11 @@
       }
     },
     {
-      "_comment": "Same as compound-mini: server-side tools only, client tools payload answers HTTP 400.",
+      "_comment": "retired 2026-10-06: HTTP 404 model_not_found (verified live). Groq removed compound models.",
       "match": "groq/compound",
       "priority": 7,
-      "enabled": true,
+      "enabled": false,
+      "_retired": true,
       "execution": {
         "context_length": 131072,
         "max_output_tokens": 8192,
@@ -181,6 +185,9 @@
         "supports_tools": true,
         "supports_vision": false,
         "family": "qwen",
+        "temperature": 0.2,
+        "top_p": 0.95,
+        "max_tokens": 4096,
         "timeout_seconds": 120
       }
     }

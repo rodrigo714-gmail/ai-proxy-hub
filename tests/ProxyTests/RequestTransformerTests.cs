@@ -434,16 +434,42 @@ public class RequestTransformerTests
     [Fact]
     public void ApplyExecutionDefaults_StripsToolsForModelsFlaggedSupportsToolsFalse()
     {
-        // groq/compound is flagged supports_tools=false in groq.json: Groq's compound
-        // models run server-side tools and answer HTTP 400 to any client tools payload.
-        RequestTransformer sut = CreateTransformer();
-        string raw = """{"messages":[],"tools":[{"type":"function","function":{"name":"f","parameters":{}}}],"tool_choice":"auto"}""";
+        // Models flagged supports_tools=false in their config reject a tools payload outright
+        // (e.g. compound models answer HTTP 400 "`tool calling` is not supported"),
+        // so the tools/tool_choice fields must never reach them.
+        string tempDir = Path.Combine(Path.GetTempPath(), "test-model-selection-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(tempDir);
+        try
+        {
+            File.WriteAllText(Path.Combine(tempDir, "test.json"), """
+            {
+              "provider": "groq",
+              "models": [
+                {
+                  "match": "test-compound",
+                  "priority": 1,
+                  "enabled": true,
+                  "execution": {
+                    "supports_tools": false
+                  }
+                }
+              ]
+            }
+            """);
 
-        string result = sut.ApplyExecutionDefaults(raw, "groq/compound", default);
+            RequestTransformer sut = CreateTransformer(out _, tempDir);
+            string raw = """{"messages":[],"tools":[{"type":"function","function":{"name":"f","parameters":{}}}],"tool_choice":"auto"}""";
 
-        using JsonDocument doc = JsonDocument.Parse(result);
-        Assert.False(doc.RootElement.TryGetProperty("tools", out _));
-        Assert.False(doc.RootElement.TryGetProperty("tool_choice", out _));
+            string result = sut.ApplyExecutionDefaults(raw, "test-compound", default);
+
+            using JsonDocument doc = JsonDocument.Parse(result);
+            Assert.False(doc.RootElement.TryGetProperty("tools", out _));
+            Assert.False(doc.RootElement.TryGetProperty("tool_choice", out _));
+        }
+        finally
+        {
+            Directory.Delete(tempDir, true);
+        }
     }
 
     [Fact]
@@ -452,7 +478,7 @@ public class RequestTransformerTests
         RequestTransformer sut = CreateTransformer();
         string raw = """{"messages":[],"tools":[{"type":"function","function":{"name":"f","parameters":{}}}],"tool_choice":"auto"}""";
 
-        string result = sut.ApplyExecutionDefaults(raw, "qwen/qwen3.6-27b", default);
+        string result = sut.ApplyExecutionDefaults(raw, "qwen/qwen3.8-27b", default);
 
         using JsonDocument doc = JsonDocument.Parse(result);
         Assert.True(doc.RootElement.TryGetProperty("tools", out _));
@@ -464,14 +490,14 @@ public class RequestTransformerTests
         return CreateTransformer(out _);
     }
 
-    private static RequestTransformer CreateTransformer(out ReasoningCacheService cache)
+    private static RequestTransformer CreateTransformer(out ReasoningCacheService cache, string? configDirOverride = null)
     {
         Environment.SetEnvironmentVariable("PROVIDER_DEEPSEEK_API_KEY", "unit-test-key");
         Environment.SetEnvironmentVariable("PROVIDER_DEEPSEEK_BASE_URL", "http://127.0.0.1:12345");
 
         ProviderHttpClientFactory httpClientFactory = new();
         ProviderRegistry providerRegistry = new(httpClientFactory);
-        ModelSelectionStore modelSelectionStore = new();
+        ModelSelectionStore modelSelectionStore = new(configDirOverride);
         ModelCatalogService modelCatalog = new(providerRegistry, modelSelectionStore);
         cache = new ReasoningCacheService();
 

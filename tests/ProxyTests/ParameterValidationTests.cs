@@ -221,6 +221,7 @@ public class ParameterValidationTests
     // ─── Groq ────────────────────────────────────────────────────────────
 
     [Theory]
+    [InlineData("qwen/qwen3.8-27b")]
     [InlineData("qwen/qwen3.6-27b")]
     [InlineData("openai/gpt-oss-120b")]
     [InlineData("meta-llama/llama-4-scout-17b-16e-instruct")]
@@ -237,11 +238,9 @@ public class ParameterValidationTests
     }
 
     [Theory]
-    [InlineData("qwen/qwen3.6-27b")]
+    [InlineData("qwen/qwen3.8-27b")]
     [InlineData("openai/gpt-oss-120b")]
-    [InlineData("groq/compound-mini")]
     [InlineData("openai/gpt-oss-20b")]
-    [InlineData("groq/compound")]
     public void Groq_Models_MaxTokensInjected(string model)
     {
         RequestTransformer sut = CreateTransformer();
@@ -520,6 +519,7 @@ public class ParameterValidationTests
     [InlineData("gpt-5.4",       "openai")]
     [InlineData("gpt-5.4-mini",  "openai")]
     [InlineData("o4-mini",       "openai")]
+    [InlineData("qwen/qwen3.8-27b",              "groq")]
     [InlineData("qwen/qwen3.6-27b",              "groq")]
     [InlineData("openai/gpt-oss-120b",           "groq")]
     [InlineData("meta-llama/llama-4-scout-17b-16e-instruct", "groq")]
@@ -576,13 +576,14 @@ public class ParameterValidationTests
 
     [Theory]
     [InlineData("deepseek", 3)]      // v4-pro + v4-flash + deepseek-flash (verified live 2026-09-10; coder-6.7b disabled)
+    [InlineData("google", 6)]        // -1 gemini-2.5-pro retired 2026-10-06 (HTTP 404 Not Found, verified live)
     [InlineData("openai", 4)]        // gpt-5.5, gpt-5.4, gpt-5.4-mini, o4-mini (gpt-5.5-pro is Responses-API only)
-    [InlineData("nvidia", 4)]        // -5 retired 2026-09-11 (HTTP 410 Gone, verified live); +1 openai/gpt-oss-20b (verified live, failover anchor)
-    [InlineData("groq", 6)]          // -2 retired 2026-09-11: llama-3.3-70b-versatile, llama-3.1-8b-instant (HTTP 404, verified live)
+    [InlineData("nvidia", 3)]        // -1 deepseek-ai/deepseek-v4-pro retired (not offered upstream / HTTP 404, verified live 2026-10-06)
+    [InlineData("groq", 3)]          // -3 retired (qwen3.6-27b replaced by 3.8; compound & compound-mini HTTP 404, verified live 2026-10-06)
     [InlineData("openrouter", 10)]
     [InlineData("moonshot", 6)]      // 6 enabled (kimi-k2.5 disabled); v1-* kept: account 429s make them unverifiable
     [InlineData("cerebras", 1)]      // gpt-oss-120b only; zai-glm-4.7 retired 2026-09-11 (HTTP 404 archived, verified live)
-    [InlineData("ollama", 11)]       // curated roster + gpt-oss:20b + nemotron-3-nano:30b (verified live 2026-09-10); single ollama.json
+    [InlineData("ollama", 10)]       // -2 retired (HTTP 410 Gone: glm-5.1, deepseek-v4-flash); +1 gemma4:31b (HTTP 200 OK, verified live 2026-10-06)
     [InlineData("zenmux", 0)]        // whole roster disabled 2026-07-31: HTTP 402 reject_no_credit on every model
     public void EnabledModelCount_IsCorrect(string providerName, int expectedEnabled)
     {

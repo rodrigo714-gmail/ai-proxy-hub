@@ -91,7 +91,9 @@
     {
       "match": "models/gemini-2.5-pro",
       "priority": 6,
-      "enabled": true,
+      "enabled": false,
+      "_retired": true,
+      "_comment": "retired 2026-10-06: HTTP 404 Not Found (verified live). Google officially retired gemini-2.5-pro in favor of the gemini-3.x series.",
       "execution": {
         "context_length": 2097152,
         "max_output_tokens": 65536,
@@ -450,6 +452,262 @@
       "_auto": true,
       "_added": "2026-09-11",
       "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/gemini-omni-flash-preview",
+      "priority": 29,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/gemini-pro-latest",
+      "priority": 30,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/gemini-robotics-er-2-preview",
+      "priority": 31,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/gemini-robotics-er-2-streaming-preview",
+      "priority": 32,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/gemma-4-26b-a4b-it",
+      "priority": 33,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/gemma-4-31b-it",
+      "priority": 34,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 16384,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "google",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/lyria-3-pro-preview",
+      "priority": 35,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/lyria-3.5",
+      "priority": 36,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/lyria-realtime-exp",
+      "priority": 37,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/nano-banana-pro-preview",
+      "priority": 38,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/veo-3.1-fast-generate-preview",
+      "priority": 39,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/veo-3.1-generate-preview",
+      "priority": 40,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/veo-3.1-lite-generate-preview",
+      "priority": 41,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-11",
+      "_comment": "roster sync 2026-09-11: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/antigravity-preview-09-2026",
+      "priority": 42,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-14",
+      "_comment": "roster sync 2026-09-14: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/gemini-3.8-live",
+      "priority": 43,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
+      "execution": {
+        "context_length": 128000,
+        "max_output_tokens": 8192,
+        "supports_tools": true,
+        "supports_vision": false,
+        "family": "api",
+        "timeout_seconds": 120
+      }
+    },
+    {
+      "match": "models/gemini-3.8-live-extended-thinking",
+      "priority": 44,
+      "enabled": false,
+      "_auto": true,
+      "_added": "2026-09-15",
+      "_comment": "roster sync 2026-09-15: auto-added, disabled until reviewed",
       "execution": {
         "context_length": 128000,
         "max_output_tokens": 8192,
